@@ -1,0 +1,14 @@
+{
+  "name": "uci-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jeffrey Dinh <dinhjeffreyy@gmail.com> (http://dindledoo.com/)",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.13.4"
+  }
+}
