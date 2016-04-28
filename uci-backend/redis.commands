@@ -1,0 +1,35 @@
+//FAST COMMAND REFERENCE
+redis-server                - start server
+redis-cli                   - start redis console
+SET server:name "VALUE"     - insert data
+GET server:name             - get data
+INCR keyname                - atomically(when 2 ppl accessing same key) increment value 
+EXPIRE resource:lock 120    - set expiration/ttl (time to live) value to 120 seconds
+TTL resource:lock           - countdown of your ttl value (-1:never expire -2:key doesn't exist)
+                              setting the same key resets TTL
+RPUSH friends "NAME"        - put new value @ end of list
+LPUSH friends "NAME"        - put new value @ beginning of list
+LRANGE friends 0 -1         - outputs list of values with 2 params (0:first -1:last)
+LLEN friends                - length of list
+LPOP friends                - removes first element of list
+RPOP friends                - removes last element of list
+SADD superpowers            - adds value to a set (set is a datastructure with all unique elements) 
+SREM superpowers            - removes value from a set
+SISMEMBER superpowers       - check if value is in the set (1:true 0:false)
+SMEMBERS superpowers        - lists all the members of set
+SUNION set1 set2            - combines 2 sets
+ZADD hackers 1940 "Alan Kay"- add to sorted set(1940: score ~ sort value "Alan Kay" Value)
+ZRANGE hackers 2 4          - lists the sorted set ( arg1: start of range |  arg2: end of range )
+
+
+
+
+
+
+
+
+
+
+
+
+
