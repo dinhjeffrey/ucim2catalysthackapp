@@ -1,3 +1,4 @@
+//Sample Code: https://codeforgeek.com/2015/07/using-redis-to-handle-session-in-node-js/
 //FAST COMMAND REFERENCE
 redis-server                - start server
 redis-cli                   - start redis console
@@ -20,6 +21,16 @@ SMEMBERS superpowers        - lists all the members of set
 SUNION set1 set2            - combines 2 sets
 ZADD hackers 1940 "Alan Kay"- add to sorted set(1940: score ~ sort value "Alan Kay" Value)
 ZRANGE hackers 2 4          - lists the sorted set ( arg1: start of range |  arg2: end of range )
+
+/*
+
+What is Redis?
+
+It is a key-value database server.
+Each time you set and get you create a key for a particular value
+There are underlying implicit datastructures that you can use
+
+*/
 
 
 
