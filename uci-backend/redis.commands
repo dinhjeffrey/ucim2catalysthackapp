@@ -1,4 +1,5 @@
 //Sample Code: https://codeforgeek.com/2015/07/using-redis-to-handle-session-in-node-js/
+
 //FAST COMMAND REFERENCE
 redis-server                - start server
 redis-cli                   - start redis console
@@ -8,20 +9,34 @@ INCR keyname                - atomically(when 2 ppl accessing same key) incremen
 EXPIRE resource:lock 120    - set expiration/ttl (time to live) value to 120 seconds
 TTL resource:lock           - countdown of your ttl value (-1:never expire -2:key doesn't exist)
                               setting the same key resets TTL
+// List
 RPUSH friends "NAME"        - put new value @ end of list
 LPUSH friends "NAME"        - put new value @ beginning of list
 LRANGE friends 0 -1         - outputs list of values with 2 params (0:first -1:last)
 LLEN friends                - length of list
 LPOP friends                - removes first element of list
 RPOP friends                - removes last element of list
+
+//SET
 SADD superpowers            - adds value to a set (set is a datastructure with all unique elements) 
 SREM superpowers            - removes value from a set
 SISMEMBER superpowers       - check if value is in the set (1:true 0:false)
 SMEMBERS superpowers        - lists all the members of set
 SUNION set1 set2            - combines 2 sets
+
+//SORTED SET
 ZADD hackers 1940 "Alan Kay"- add to sorted set(1940: score ~ sort value "Alan Kay" Value)
 ZRANGE hackers 2 4          - lists the sorted set ( arg1: start of range |  arg2: end of range )
 
+//HASH  
+HSET user:1000 key "VALUE"  - creates a hash where a field (key) is mapped to a string value
+HGETALL user:1000           - gets all the saved hash values of particular key stored
+
+//setting a bunch of hashes at once ~ unquoted => field , quoted ~ value
+HMSET user:1000 name "Mary Jones" password "hidden" email "mjones@example.com"
+
+HGET user:1000 name         - gets one value ("Mary Jones") from a field (name)
+                            
 /*
 
 What is Redis?
@@ -29,6 +44,13 @@ What is Redis?
 It is a key-value database server.
 Each time you set and get you create a key for a particular value
 There are underlying implicit datastructures that you can use
+
+
+Interesting Facts
+
+The colons if you are wondering are for namespacing, so that you
+can easily reference an instance under an overarching object (i.e.
+bob is a user => user:bob)
 
 */
 
