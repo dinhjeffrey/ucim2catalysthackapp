@@ -112,6 +112,9 @@ process.on('uncaughtException', function(err) {
   console.log('Caught exception: ' + util.inspect(err));
 });
 
+// *********************** Redis Db *************************************
+// *********************** TODO: connect POST to db  ********************
+
 var redis = require('redis')
 var client = redis.createClient() //creates a new client
 
