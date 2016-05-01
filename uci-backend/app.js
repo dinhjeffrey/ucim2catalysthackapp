@@ -11,8 +11,8 @@ app.get('/', function (req, res) {
 });
 
 /* REDIS Defaults
- port = 127.0.0.1
- host = 6379
+ hostname = 127.0.0.1
+ port = 6379
 */
 
 var client = redis.createClient()

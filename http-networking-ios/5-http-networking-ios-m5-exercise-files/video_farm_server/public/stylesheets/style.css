@@ -1,0 +1,38 @@
+body {
+  padding: 10px 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+table#videos {
+  margin: 10px 20px;
+}
+
+td.title {
+
+}
+
+td.thumbnail img {
+  width: 60px;
+  height: 40px;
+}
+
+#all_videos {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+#banner a, a:visited {
+  text-decoration: none;
+  color: inherit;
+}
+
+#banner h2 {
+  display: inline;
+  position: relative;
+  top: -40px;
+}

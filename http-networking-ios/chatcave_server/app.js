@@ -9,7 +9,7 @@ var engine = require('ejs-locals');
 var http = require('http');
 var https = require('https');
 
-var routes = require('./routes');
+var routes = require('./routes'); // doesn't do anything
 var users = require('./routes/users');
 var rooms = require('./routes/rooms');
 var userRooms = require('./routes/userRooms');
@@ -110,4 +110,18 @@ else {
 
 process.on('uncaughtException', function(err) {
   console.log('Caught exception: ' + util.inspect(err));
+});
+
+var redis = require('redis')
+var client = redis.createClient() //creates a new client
+
+/* REDIS Defaults
+ hostname = 127.0.0.1
+ port = 6379
+*/
+
+var client = redis.createClient()
+
+client.on('connect', function() {
+    console.log('connected to Redis DB!')
 });

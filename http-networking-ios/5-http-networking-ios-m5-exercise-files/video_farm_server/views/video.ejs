@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Video: <%= video.title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <%- include partials/banner.ejs %>
+
+    <a href="/videos" id="all_videos">Back to all videos</a>
+    <h1><%= video.title %></h1>
+    <% if (video.description) { %>
+    <p>
+      <%= video.description %>;
+    </p>
+    <% } %>
+    <p>
+      Uploaded <%- timeago(video.created) %>.
+    </p>
+    <video width="600" controls>
+      <source src="<%= video.url %>/movie.mov">
+    </video>
+
+    <form action="<%= video.url %>" method="POST">
+      <input type="hidden" name="_method" value="DELETE"/>
+      <input type="submit" value="Delete"/>
+    </form>
+  </body>
+</html>

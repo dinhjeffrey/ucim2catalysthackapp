@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Videos</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <%- include partials/banner.ejs %>
+
+    <h1>All Videos</h1>
+    <table id="videos">
+    <% for (var i = 0; i < videos.length; i++) { %>
+      <% var video = videos[i] %>
+      <tr>
+        <td class="thumbnail">
+          <a href="<%= video.url %>">
+            <img src="<%= video.url %>/thumbnail.png"/>
+          </a>
+        <td class="title">
+          <a href="<%= video.url %>"><%= video.title %></a>
+        </td>
+        <td><%= video.duration %> sec.</td>
+        <td><%- timeago(video.created) %></td>
+        <td class="description"><%= video.description %></td>
+      </tr>
+    <% } %>
+    </table>
+  </body>
+</html>
