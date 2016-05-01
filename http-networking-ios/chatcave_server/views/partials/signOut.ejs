@@ -1,0 +1,9 @@
+<div id="sign_out">
+  <p class="account">
+    <a href="/users/<%= user_id %>">Account</a>
+  </p>
+  <form action="/account" method="POST">
+    <input type="hidden" name="_method" value="delete"/>
+    <input type="Submit" value="Sign Out">
+  </form>
+</div>

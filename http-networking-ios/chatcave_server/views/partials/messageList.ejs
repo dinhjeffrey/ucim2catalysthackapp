@@ -1,0 +1,21 @@
+<h2>Messages</h2>
+<ul id="messages">
+<% for (var i = 0; i < messages.length; i++) { %>
+  <% var message = messages[i]; %>
+  <li message_id="<%= message.id %>">
+    <span class="timestamp">
+      <%= message.timestamp.toTimeString() %>
+    </span>
+    <span class="author">
+      <%= message.author %>
+    </span>
+    <% if (message.type === 'chat') { %>
+      <%= message.text %>
+    <% } else if (message.type === 'leave') { %>
+      <span class="status">has left the room</span>
+    <% } else if (message.type === 'join') { %>
+      <span class="status">has joined the room</span>
+    <% } %>
+  </li>
+<% } %>
+</ul>

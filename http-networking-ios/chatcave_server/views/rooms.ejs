@@ -1,0 +1,17 @@
+<% layout('layout') -%>
+<h1>Chat Rooms</h1>
+<% if (rooms.length === 0) { %>
+<p>No chat rooms exist right now</p>
+<% } else { %>
+<p>Here are the available chat rooms:</p>
+<ul>
+  <% for (var i = 0; i < rooms.length; i++) { %>
+  <li><a href="/rooms/<%= rooms[i].id %>"><%= rooms[i].name %></a></li>
+  <% } %>
+</ul>
+<% } %>
+<p>
+  <a href="/rooms/new">Create a new chatroom</a>
+</p>
+
+<%- include partials/signOut.ejs %>

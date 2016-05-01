@@ -1,0 +1,25 @@
+<% layout('layout') -%>
+<h1>Sign In</h1>
+<% if (typeof error !== 'undefined') { %>
+<div class="error">
+  <%= error %>
+</div>
+<% } %>
+<form action="/account" method="POST" id="sign_in">
+  <input type="hidden" name="_method" value="PUT"/>
+  <div class="field">
+    <label for="username">User Name:</label>
+    <input type="text" id="username" name="user[name]"/>
+  </div>
+  <div class="field">
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="user[password]"/>
+  </div>
+  <div class="field">
+    <label for="Submit"></label>
+    <input type="Submit" value="Sign In"/>
+  </div>
+</form>
+<p>
+  Need to create an account? <a href="/users/new">Sign Up!</a>
+</p>

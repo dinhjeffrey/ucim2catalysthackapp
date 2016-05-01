@@ -1,0 +1,14 @@
+The sample application doesn’t come with server keys. If you would like to
+generate them, following these steps:
+
+1. Make sure you have `openssl` installed. If not install it with Homebrew
+   using `brew install openssl`
+2. Run `openssl genrsa -des3 -passout pass:x -out server.pass.key 2048`
+3. Run `openssl rsa -passin pass:x -in server.pass.key -out server.key`
+4. You can now delete the server.pass.key with `rm server.pass.key`
+5. Run `openssl req -new -key server.key -out server.csr` and answer each
+   of the questions when prompted.
+
+If the server is started with `-s` or `--https` it will look for a server
+key and certificate in this directory. The key file should be named
+'server.key' and the certificate should be named 'server.crt'.

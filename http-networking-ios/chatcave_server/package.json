@@ -1,0 +1,26 @@
+{
+  "name": "application-name",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "~4.1",
+    "ejs": "*",
+    "less-middleware": "*",
+    "node-uuid": "~1.4.1",
+    "array.prototype.findindex": "~0.1.0",
+    "nedb": "~0.10.4",
+    "connect-nedb-session": "0.0.2",
+    "express-session": "~1.0.4",
+    "cookie-session": "~1.0.1",
+    "body-parser": "~1.0.2",
+    "method-override": "~1.0.0",
+    "errorhandler": "~1.0.0",
+    "static-favicon": "~1.0.2",
+    "morgan": "~1.0.0",
+    "serve-static": "~1.1.0",
+    "ejs-locals": "~1.0.2"
+  }
+}

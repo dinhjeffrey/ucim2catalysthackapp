@@ -1,0 +1,22 @@
+<% layout('layout') -%>
+<h1>Create a new user</h1>
+<% if (typeof error !== 'undefined') { %>
+<p class="error"><%= error %></p>
+<% } %>
+<form action="/users" method="POST" id="new_user">
+  <div class="field">
+    <label for="user_name">User name:</label>
+    <input type="text" name="user[name]" id="user_name"/>
+  </div>
+  <div class="field">
+    <label for="user_password">Password:</label>
+    <input type="password" name="user[password]" id="user_password"/>
+  </div>
+  <div class="field">
+    <label for="submit"></label>
+    <input type="submit"/>
+  </div>
+</form>
+<p>
+  Already have an account? <a href="/account/new">Sign In!</a>
+</p>

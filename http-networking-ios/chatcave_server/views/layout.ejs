@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <div class="home">
+      <a href="/">Home</a>
+    </div>
+    <%- body %>
+    <% if (typeof user_id !== 'undefined') { %>
+    <%- include partials/signOut.ejs %>
+    <% } %>
+  </body>
+</html>

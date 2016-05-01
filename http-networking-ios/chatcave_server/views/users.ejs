@@ -1,0 +1,27 @@
+<% layout('layout') -%>
+<h1>All Users</h1>
+
+<% if (typeof error !== 'undefined') { %>
+<p class="error"><%= error %></p>
+<% } %>
+
+<% if (users.length === 0) { %>
+<p>There are currently no users</p>
+<% } else { %>
+<ul>
+  <% for (var i = 0; i < users.length; i++) { %>
+  <% var user = users[i]; %>
+  <li>
+    <a href="/users/<%=user.id %>"><%= user.name %></a>
+  </li>
+  <% } %>
+</ul>
+<% } %>
+
+<p>
+<% if (request.session.user) { %>
+  <a href="/users/<%= request.session.user.id %>">My User</a>
+<% } else { %>
+  <a href="/users/new">Create a user</a>
+<% } %>
+</p>

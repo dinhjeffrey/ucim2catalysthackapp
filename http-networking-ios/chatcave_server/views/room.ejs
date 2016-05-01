@@ -1,0 +1,43 @@
+<% layout('layout') -%>
+<h1>Welcome to '<%= room.name %>'</h1>
+
+<% if (room.getChatters().length === 0) { %>
+<p>There are no chatters in this room</p>
+<% } else { %>
+<p>Here are the chatters in this rooms:</p>
+<ul>
+  <% for (var i = 0; i < room.getChatters().length; i++) { %>
+  <% var chatter = room.getChatters()[i] %>
+  <li>
+    <%= chatter.name %>
+  </li>
+  <% } %>
+</ul>
+<% } %>
+
+<p>
+  <% if (room.containsChatter(userID)) { %>
+    <% var messages = room.getMessages(null); %>
+    <%- include partials/messageList.ejs %>
+    <%- include partials/newMessage.ejs %>
+    <p>
+      <form action="/rooms/<%= room.id %>/chatters/<%= userID %>" method="POST">
+        <input type="hidden" name="_method" value="DELETE"/>
+        <input type="Submit" value="Leave Room"/>
+      </form>
+    </p>
+  <% } else { %>
+  <form method="POST" action="/rooms/<%= room.id %>/chatters/<%= userID %>">
+    <input type="hidden" name="_method" value="PUT"/>
+    <input type="Submit" value="Join!"/>
+  </form>
+  <% } %>
+</p>
+
+<p>
+  <a href="/rooms">Return to all rooms</a>
+</p>
+
+<script type="text/javascript" src="/javascripts/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="/javascripts/chatroom.js"></script>
+<%- include partials/signOut.ejs %>

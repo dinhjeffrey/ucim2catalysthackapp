@@ -1,0 +1,83 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+p.error {
+  border: solid 1px red;
+  padding: 10px;
+  background-color: #ff848e;
+}
+
+ul#messages {
+  width: 90%;
+  min-height: 200px;
+  border: solid 1px #cdcdcd;
+  overflow: scroll;
+  padding: 10px;
+
+  li {
+    list-style-type: none;
+    span.timestamp {
+      font-weight: bold;
+    }
+    span.author {
+      font-weight: bold;
+      color: blue;
+    }
+    span.status {
+      font-style: italic;
+    }
+  }
+}
+
+form#new_message {
+  label {
+    display: block;
+    font-weight: bold;
+  }
+
+  textarea {
+    width: 75%;
+    min-height: 60px;
+  }
+
+  input[type=Submit] {
+    position: relative;
+    top: -15px;
+  }
+}
+
+form {
+  div.field {
+    margin-bottom: 8px;
+    label {
+      width: 120px;
+      display: inline-block;
+      text-align: right;
+    }
+  }
+}
+
+div#sign_out {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+div#home {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+span.key {
+  font-family: monospace;
+  background-color: #cdcdcd;
+  padding: 10px 8px;
+  border: solid 1px #ababab;
+}
