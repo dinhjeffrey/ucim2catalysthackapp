@@ -9,6 +9,8 @@
   "author": "Jeffrey Dinh <dinhjeffreyy@gmail.com> (http://dindledoo.com/)",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.13.4"
+    "express": "^4.13.4",
+    "pug": "^2.0.0-alpha6",
+    "redis": "^2.6.0-2"
   }
 }
