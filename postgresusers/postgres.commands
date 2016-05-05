@@ -1,0 +1,19 @@
+##Basic Setup##
+brew install postgres
+pg_ctl -D . -l logfile start
+pg_ctl -D . -l logfile stop
+createdb db_name
+dropdb db_name
+initdb --pgdata directory_name
+
+##Basic Commands##
+psql postgres
+CREATE DATABASE database_name
+\list
+\c database_name
+\i file_name
+\h command_name
+\q
+
+
+##Create Table##
