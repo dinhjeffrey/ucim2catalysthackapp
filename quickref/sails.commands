@@ -1,3 +1,20 @@
 ##Basic Commands##
 sails lift or nodemon app.js
 
+##Connect to Postgres##
+/config/connections.js
+uncomment out somePostgresqlServer (line 77-83)
+somePostgresqlServer: {
+    adapter: 'sails-postgresql',
+    host: 'localhost',
+    user: 'uci-user', // optional, created in pgAdmin
+    password: 'YOUR_POSTGRES_PASSWORD', // optional
+    database: 'uci-postgres' //optional, created in pgAdmin
+  }
+
+
+/config/env/development.js
+uncomment out models (line 20-22)
+  models: {
+    connection: 'somePostgresqlServer'
+  }

@@ -9,6 +9,9 @@ initdb --pgdata directory_name
 or download
 http://postgresapp.com/
 
+##GUI##
+http://www.pgadmin.org/download/macosx.php
+
 ##Basic Commands##
 psql postgres
 CREATE DATABASE database_name
