@@ -6,6 +6,9 @@ createdb db_name
 dropdb db_name
 initdb --pgdata directory_name
 
+or download
+http://postgresapp.com/
+
 ##Basic Commands##
 psql postgres
 CREATE DATABASE database_name
