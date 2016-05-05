@@ -1,4 +1,4 @@
-##Basic Commands##
+##Start Server##
 sails lift or nodemon app.js
 
 ##Connect to Postgres##
@@ -18,3 +18,17 @@ uncomment out models (line 20-22)
   models: {
     connection: 'somePostgresqlServer'
   }
+
+/config/models.js
+migrate : // safe, alter, drop
+	safe	never auto-migrate my database(s). I will do it myself, by hand.
+	alter	auto-migrate columns/fields, but attempt to keep my existing data (experimental)
+	drop	wipe/drop ALL my data and rebuild models every time I lift Sails
+
+##Sails generate##
+sails generate new <appName>
+sails generate api <foo>
+sails generate model <foo> 
+sails generate controller <foo>
+sails generate adapter <foo>
+sails generate generator <foo>
