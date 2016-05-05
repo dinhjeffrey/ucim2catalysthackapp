@@ -1,0 +1,23 @@
+Redis
+=====
+
+user:github_id 
+  handle "chuck" * 
+  name "realname"
+  email "example@example.com" *
+  age "23"
+  programming_language "javascript" only if we have time
+  occupation "student" only if we have time
+  
+======sample data set========
+keys user* =>
+  user:124125
+  user:145141
+=============================
+
+======  
+  
+
+
+
+
