@@ -20,6 +20,11 @@ CREATE DATABASE database_name
 \i file_name
 \h command_name
 \q
+ ;
+insert into "table_name" values ('text', int);
+insert into "table_name" (column1, column2) values ('text', int);
+CREATE TABLE table_name (column_name text, column_name int references table_name (column_name), column_name bigserial primary key);
+alter table product add constraint myprimarykey primary key (id);
 
 
 ##Create Table##
