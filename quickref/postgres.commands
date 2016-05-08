@@ -1,10 +1,11 @@
 ##Basic Setup##
 brew install postgres
+initdb -U uci-user --pwfile=../uci-user.password -D .
 pg_ctl -D . -l logfile start
 pg_ctl -D . -l logfile stop
 createdb db_name
 dropdb db_name
-initdb --pgdata directory_name
+
 
 or download
 http://postgresapp.com/
