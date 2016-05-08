@@ -80,7 +80,7 @@ module.exports.connections = {
     user: 'uci-user', // optional
     password: 'YOUR_POSTGRES_PASSWORD', // optional
     database: 'uci-postgres' //optional
-  }
+  },
 
 
   /***************************************************************************

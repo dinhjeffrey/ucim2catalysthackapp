@@ -32,3 +32,8 @@ sails generate model <foo>
 sails generate controller <foo>
 sails generate adapter <foo>
 sails generate generator <foo>
+
+##REST Commands##
+localhost:1337/user?id=2 // finds user with id 2
+localhost:1337/user/create?email=ok@gmail.com // creates a new user with this email
+localhost:1337/user?where={"email":{"contains":"gmail"}}
