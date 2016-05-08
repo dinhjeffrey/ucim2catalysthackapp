@@ -82,6 +82,15 @@ module.exports.connections = {
     database: 'uci-postgres' //optional
   },
 
+  //to use this server you have to use DATABASE_URL=db_uri_on_heroku
+  herokuPostgresServer: {
+    adapter: 'sails-postgresql',
+    host: process.env.DATABASE_URL,
+    // user: 'uci-user', // optional
+    // password: 'ucidatahackathon', // optional
+    // database: 'uci-postgres' //optional
+  }
+
 
   /***************************************************************************
   *                                                                          *
