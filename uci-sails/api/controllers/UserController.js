@@ -39,7 +39,6 @@ module.exports = {
   //you generally don't want to do this - use RESTful api controllers -> this means
 	netflix: function (req, res) {
 		console.log('hitting netflix')
-    console.log(User);
 		User.create({
 			email: 'netflix@and.chill',
 			password: 'pass',
