@@ -1,0 +1,67 @@
+##Start Server##
+sails lift or nodemon app.js
+
+##Connect to Postgres##
+/config/connections.js
+uncomment out somePostgresqlServer (line 77-83)
+somePostgresqlServer: {
+    adapter: 'sails-postgresql',
+    host: 'localhost',
+    user: 'uci-user', // optional, created in pgAdmin
+    password: 'YOUR_POSTGRES_PASSWORD', // optional
+    database: 'uci-postgres' //optional, created in pgAdmin
+  }
+
+
+/config/env/development.js
+uncomment out models (line 20-22)
+  models: {
+    connection: 'somePostgresqlServer'
+  }
+
+/config/models.js
+migrate : // safe, alter, drop
+	safe	never auto-migrate my database(s). I will do it myself, by hand.
+	alter	auto-migrate columns/fields, but attempt to keep my existing data (experimental)
+	drop	wipe/drop ALL my data and rebuild models every time I lift Sails
+
+##Sails generate##
+sails generate new <appName>
+sails generate api <foo>
+sails generate model <foo> 
+sails generate controller <foo>
+sails generate adapter <foo>
+sails generate generator <foo>
+
+##REST Commands##
+To disable: go to config/blueprints.js and set shortcuts and rest to false
+
+localhost:1337/user?id=2 // finds user with id 2
+localhost:1337/user/create?email=ok@gmail.com // creates a new user with this email
+localhost:1337/user?where={"email":{"contains":"gmail"}}
+localhost:1337/user?where={"email":{"contains":"gmail"}}&limit=2&skip=5 // skips forward 5 pages
+
+##REST routes##
+get /user
+post /user
+get /user/:id
+put /user/:id
+delete /user/:id
+
+##Controller future logic##
+netflix: function (req, res) {
+    console.log('hitting netflix')
+    User.create({
+      email: 'netflix@and.chill',
+      password: 'pass',
+      username: 'netflix'
+    }).exec(function (err) {
+      // the future
+      if (err) return res.negotiate(err)
+
+      res.send("it worked!")
+    })
+}
+
+req.session.me // unique identifier for whoever login
+
