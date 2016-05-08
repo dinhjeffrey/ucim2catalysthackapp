@@ -1,0 +1,4 @@
+##Auto package updater##
+npm install npm-check-updates
+alias ncu="./node_modules/npm-check-updates/bin/ncu"
+./node_modules/npm-check-updates/bin/ncu

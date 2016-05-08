@@ -1,5 +1,9 @@
 ##Start Server##
 sails lift or nodemon app.js
+#DB_URL=URL sets the environment variable 
+#so you can use process.env.DB_URL
+#inside your sailsjs connections.js app
+DATABASE_URL=postgres://db-uri sails lift
 
 ##Connect to Postgres##
 /config/connections.js
