@@ -34,6 +34,34 @@ sails generate adapter <foo>
 sails generate generator <foo>
 
 ##REST Commands##
+To disable: go to config/blueprints.js and set shortcuts and rest to false
+
 localhost:1337/user?id=2 // finds user with id 2
 localhost:1337/user/create?email=ok@gmail.com // creates a new user with this email
 localhost:1337/user?where={"email":{"contains":"gmail"}}
+localhost:1337/user?where={"email":{"contains":"gmail"}}&limit=2&skip=5 // skips forward 5 pages
+
+##REST routes##
+get /user
+post /user
+get /user/:id
+put /user/:id
+delete /user/:id
+
+##Controller future logic##
+netflix: function (req, res) {
+    console.log('hitting netflix')
+    User.create({
+      email: 'netflix@and.chill',
+      password: 'pass',
+      username: 'netflix'
+    }).exec(function (err) {
+      // the future
+      if (err) return res.negotiate(err)
+
+      res.send("it worked!")
+    })
+}
+
+req.session.me // unique identifier for whoever login
+

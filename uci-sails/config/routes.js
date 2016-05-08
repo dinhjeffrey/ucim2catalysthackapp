@@ -50,5 +50,9 @@ module.exports.routes = {
   },
   'POST /user': 'UserController.signup',
   'POST /login': 'AuthController.login',
-  'POST /logout': 'AuthController.logout'
+  'POST /logout': 'AuthController.logout',
+  'GET /netflix': {
+    controller: 'UserController',
+    action: 'netflix'
+  }
 };
