@@ -1,0 +1,16 @@
+/**
+  Problem: initdb currently uses system user as the owner of the whole cluster
+  Goal: 
+  1. assign generic name (i.e. uci-user) as the owner of the cluster
+  2. delete the original system user (i.e. johndoe)
+*/
+
+/**
+  Progress:
+  1. su - postgres # su: sorry
+     su - _postgres # su: sorry
+  2. sudo su postgres # su: sorry
+  3. sudo su #root password
+     sudo chown _postgres dbcluster_directory 
+    initdb -D . # permission denied
+*/
