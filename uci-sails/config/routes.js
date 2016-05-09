@@ -49,10 +49,12 @@ module.exports.routes = {
     view: 'signup'
   },
   'POST /user': 'UserController.signup',
-  'POST /login': 'AuthController.login',
-  'POST /logout': 'AuthController.logout',
-  'GET /netflix': {
-    controller: 'UserController',
-    action: 'netflix'
+  'POST /login': {
+    controller: 'AuthController',
+    action: 'login'
+  },
+  'GET /logout': {
+    controller: 'AuthController',
+    action: 'logout'
   }
 };

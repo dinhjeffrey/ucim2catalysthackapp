@@ -3,10 +3,8 @@
 <!--STYLES END-->
 
 <div class="dead-center">
-<h1>Profile: </h1>
-<form method="POST" action="/logout">
-  <%= message %>
-
+<h1>Profile: <%= email %></h1>
+<form method="GET" action="/logout">
 <input type="submit" value="logout">
 </form>
 </div>
