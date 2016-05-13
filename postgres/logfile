@@ -1,0 +1,2 @@
+FATAL:  data directory "/Users/Jeffrey/Documents/GitHub/uci-hackathon-app/postgres" has group or world access
+DETAIL:  Permissions should be u=rwx (0700).

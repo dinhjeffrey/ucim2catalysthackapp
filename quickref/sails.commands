@@ -16,6 +16,16 @@ somePostgresqlServer: {
     database: 'uci-postgres' //optional, created in pgAdmin
   }
 
+##Waterline commands##
+User.find({id: req.body.id}).exec(function (err, idFound){
+    if (err) return res.negotiate(err);
+    var idJSON = JSON.stringify(idFound) // convert object to JSON
+    res.render('queryDone',{
+      iFoundU: idJSON
+    }); 
+  sails.log('Wow, there are %d users with this id.  Check it out:', idFound.length, idFound);
+});
+
 
 /config/env/development.js
 uncomment out models (line 20-22)

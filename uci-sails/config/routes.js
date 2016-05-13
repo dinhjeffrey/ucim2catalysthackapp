@@ -48,6 +48,24 @@ module.exports.routes = {
   'GET /signup': {
     view: 'signup'
   },
+  'POST /signup': {
+    controller: 'UserController',
+    action: 'create'
+  },
+  'GET /query': {
+    view: 'queryDB'
+  },
+  'GET /show/': {
+    view: 'queryDone'
+  },
+  'GET /show/:id': {
+    controller: 'UserController',
+    action: 'show'
+  },
+  'POST /query': { // do ajax, not this
+    controller: 'QueryController',
+    action: 'show'
+  },
   'POST /user': 'UserController.signup',
   'POST /login': {
     controller: 'AuthController',
