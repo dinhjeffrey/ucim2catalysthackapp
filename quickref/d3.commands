@@ -1,1 +1,21 @@
+<svg width="50" height="50">
+	<circle cx="25" cy="25" r="25" style="fill: blue" />
+</svg>
+
+<script>
 d3.select("body").append("svg").append("rect").attr("width", 50).attr("height", 200).style("fill", "blue")
+
+var dataset = [5, 10, 15, 20, 25]
+svg.selectAll("rect")
+	.data(dataset)
+	.enter()
+	.append("rect")
+		.attr("x", function(d, i) { // (dataset, index)
+			return (i * 21)
+		})
+		.attr("y", 0)
+		.attr("width", 20)
+		.attr("height", 100)
+
+</script>
+
