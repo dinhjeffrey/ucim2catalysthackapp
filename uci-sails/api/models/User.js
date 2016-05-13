@@ -28,7 +28,6 @@ module.exports = {
         },
         toJSON: function() {
             var obj = this.toObject();
-            console.log(obj)
             return obj;
         }
     },

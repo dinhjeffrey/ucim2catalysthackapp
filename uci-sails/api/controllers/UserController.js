@@ -24,8 +24,6 @@ module.exports = {
 
   },
 
-
-
   create: function(req,res,next) {
     User.create([{
       email: req.body.email,
@@ -35,13 +33,7 @@ module.exports = {
       error: function(err, userdata) { res.negotiate(err) },
 
       success: function(err, userdata) {
-        // var singleuser = object.filter = (obj, elem) => {
-        //
-        // }
         res.redirect('/login');
-        // res.render('user/profile', {
-        //  email: singleuser.email
-        // })
       }
     })
   },
