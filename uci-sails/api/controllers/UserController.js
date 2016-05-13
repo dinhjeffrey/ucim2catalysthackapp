@@ -17,13 +17,35 @@ module.exports = {
 
   show: function(req,res,next) {
     //TODO this will be a redirect after you login
-    console.log('in /api/controllers/UserController.show')
-    res.render(profile)
-  },
+  console.log('in /api/controllers/UserController.show')
+  User.find({id: /*req.body.id*/ req.params['id'] }).exec(function (err, idFound){
+    if (err) return res.negotiate(err);
+    var idJSON = JSON.stringify(idFound) // convert object to JSON
+    res.ok(idJSON)
+  sails.log('Wow, there are %d users with this id.  Check it out:', idFound.length, idFound);
+  });
 
-  create: function(req,res,next) {
+  },
+  
+
+
+  create: function(req,res,next) {  
     //TODO this is  your signup function
     console.log('in UserController.create')
+    console.log(req)
+    console.log(req.headers['user-agent'])
+    User.create([{
+      email: req.body.email,
+      password: req.body.password,
+      username: req.body.username
+    }]).exec({
+      error: function(requ, resu) { res.negotiate() },
+
+      success: function(requ, resu) { 
+                              
+        res.send(`YES!!! created`) 
+      }
+    })
   },
 
   post: function(req,res,next) {
@@ -41,20 +63,5 @@ module.exports = {
 		next()
   },
 
-  //you generally don't want to do this - use RESTful api controllers -> this means
-	// netflix: function (req, res) {
-	// 	console.log('hitting netflix')
-	// 	User.create({
-	// 		email: 'netflix@and.chill',
-	// 		password: 'pass',
-	// 		username: 'netflix'
-	// 	}).exec(function (err) {
-	// 		// the future
-	// 		if (err) return res.negotiate(err)
-
-	// 		res.send("it worked!")
-	// 	})
-	// }
 };
-// test
 

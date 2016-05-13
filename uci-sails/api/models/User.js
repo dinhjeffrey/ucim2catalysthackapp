@@ -26,21 +26,6 @@ module.exports = {
         	unique: true,
         	lowercase: true
         },
-        firstname: {
-        	type: 'string',
-        },
-        lastname: {
-        	type: 'string',
-        },
-        age: {
-        	type: 'int',
-        },
-        programminglanguage: {
-        	type: 'string'
-        },
-        occupation: {
-        	type: 'string'
-        },
         toJSON: function() {
             console.log("in /models/User function toJSON()")
             var obj = this.toObject();
