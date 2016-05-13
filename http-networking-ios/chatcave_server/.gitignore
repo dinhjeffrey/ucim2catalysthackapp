@@ -1,6 +1,0 @@
-users.db
-node_modules
-sessions.db
-public/stylesheets/*.css
-ssl/server.crt
-ssl/server.key
