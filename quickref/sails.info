@@ -71,3 +71,4 @@ columnName
 			type: 'integer',
 			columnName: 'number_of_round_rotating_things'
 		}
+
