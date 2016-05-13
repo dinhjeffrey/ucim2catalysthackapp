@@ -1,0 +1,488 @@
+LOG:  could not bind IPv6 socket: Address already in use
+HINT:  Is another postmaster already running on port 5432? If not, wait a few seconds and retry.
+LOG:  could not bind IPv4 socket: Address already in use
+HINT:  Is another postmaster already running on port 5432? If not, wait a few seconds and retry.
+WARNING:  could not create listen socket for "localhost"
+FATAL:  could not create any TCP/IP sockets
+FATAL:  lock file "postmaster.pid" already exists
+HINT:  Is another postmaster (PID 42774) running in data directory "/Users/charlesweng/Documents/7databases7weeks/postgres"?
+LOG:  database system was shut down at 2016-02-12 16:11:56 PST
+LOG:  MultiXact member wraparound protections are now enabled
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started
+LOG:  received fast shutdown request
+LOG:  aborting any active transactions
+LOG:  autovacuum launcher shutting down
+LOG:  shutting down
+LOG:  database system is shut down
+LOG:  database system was shut down at 2016-02-18 13:10:58 PST
+LOG:  MultiXact member wraparound protections are now enabled
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started
+LOG:  received fast shutdown request
+LOG:  aborting any active transactions
+LOG:  autovacuum launcher shutting down
+LOG:  shutting down
+LOG:  database system is shut down
+LOG:  database system was shut down at 2016-02-18 13:11:47 PST
+LOG:  MultiXact member wraparound protections are now enabled
+LOG:  autovacuum launcher started
+LOG:  database system is ready to accept connections
+ERROR:  database "book" does not exist
+STATEMENT:  DROP DATABASE book;
+FATAL:  lock file "postmaster.pid" already exists
+HINT:  Is another postmaster (PID 47769) running in data directory "/Users/charlesweng/Documents/7databases7weeks/postgres"?
+LOG:  received fast shutdown request
+LOG:  aborting any active transactions
+LOG:  autovacuum launcher shutting down
+LOG:  shutting down
+LOG:  database system is shut down
+LOG:  database system was shut down at 2016-02-18 13:12:26 PST
+LOG:  MultiXact member wraparound protections are now enabled
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started
+FATAL:  database "charlesweng" does not exist
+FATAL:  database "charlesweng" does not exist
+LOG:  received smart shutdown request
+LOG:  autovacuum launcher shutting down
+LOG:  shutting down
+LOG:  database system is shut down
+LOG:  database system was shut down at 2016-05-04 23:58:27 PDT
+LOG:  MultiXact member wraparound protections are now enabled
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started
+FATAL:  role "uci-user" does not exist
+FATAL:  database "charlesweng" does not exist
+FATAL:  role "uci-user" does not exist
+ERROR:  duplicate key value violates unique constraint "user_email_key"
+DETAIL:  Key (email)=(jeff@mail.com) already exists.
+STATEMENT:  INSERT INTO "public"."user" ("email", "password", "username", "createdAt", "updatedAt") values ($1, $2, $3, $4, $5) RETURNING *
+ERROR:  duplicate key value violates unique constraint "user_email_key"
+DETAIL:  Key (email)=(janice@mail.com) already exists.
+STATEMENT:  INSERT INTO "public"."user" ("email", "password", "username", "createdAt", "updatedAt") values ($1, $2, $3, $4, $5) RETURNING *
+ERROR:  invalid input syntax for integer: "NaN"
+STATEMENT:  DELETE  FROM "public"."user" AS "user"  WHERE "user"."id" IN ($1,$2,$3)  RETURNING *
+ERROR:  duplicate key value violates unique constraint "user_email_key"
+DETAIL:  Key (email)=(charles@mail.com) already exists.
+STATEMENT:  INSERT INTO "public"."user" ("email", "password", "username", "createdAt", "updatedAt") values ($1, $2, $3, $4, $5) RETURNING *
+ERROR:  duplicate key value violates unique constraint "user_email_key"
+DETAIL:  Key (email)=(charles@mail.com) already exists.
+STATEMENT:  INSERT INTO "public"."user" ("email", "password", "username", "createdAt", "updatedAt") values ($1, $2, $3, $4, $5) RETURNING *
+ERROR:  duplicate key value violates unique constraint "user_email_key"
+DETAIL:  Key (email)=(janice@mail.com) already exists.
+STATEMENT:  INSERT INTO "public"."user" ("email", "password", "username", "createdAt", "updatedAt") values ($1, $2, $3, $4, $5) RETURNING *
+ERROR:  duplicate key value violates unique constraint "user_email_key"
+DETAIL:  Key (email)=(jeff@mail.com) already exists.
+STATEMENT:  INSERT INTO "public"."user" ("email", "password", "username", "createdAt", "updatedAt") values ($1, $2, $3, $4, $5) RETURNING *
+ERROR:  invalid input syntax for integer: "NaN"
+STATEMENT:  DELETE  FROM "public"."user" AS "user"  WHERE "user"."id" IN ($1,$2,$3)  RETURNING *
+ERROR:  duplicate key value violates unique constraint "user_email_key"
+DETAIL:  Key (email)=(janice@mail.com) already exists.
+STATEMENT:  INSERT INTO "public"."user" ("email", "password", "username", "createdAt", "updatedAt") values ($1, $2, $3, $4, $5) RETURNING *
+ERROR:  duplicate key value violates unique constraint "user_email_key"
+DETAIL:  Key (email)=(charles@mail.com) already exists.
+STATEMENT:  INSERT INTO "public"."user" ("email", "password", "username", "createdAt", "updatedAt") values ($1, $2, $3, $4, $5) RETURNING *
+ERROR:  invalid input syntax for integer: "NaN"
+STATEMENT:  DELETE  FROM "public"."user" AS "user"  WHERE "user"."id" IN ($1,$2,$3)  RETURNING *
+ERROR:  duplicate key value violates unique constraint "user_email_key"
+DETAIL:  Key (email)=(jeff@mail.com) already exists.
+STATEMENT:  INSERT INTO "public"."user" ("email", "password", "username", "createdAt", "updatedAt") values ($1, $2, $3, $4, $5) RETURNING *
+ERROR:  duplicate key value violates unique constraint "user_email_key"
+DETAIL:  Key (email)=(janice@mail.com) already exists.
+STATEMENT:  INSERT INTO "public"."user" ("email", "password", "username", "createdAt", "updatedAt") values ($1, $2, $3, $4, $5) RETURNING *
+ERROR:  duplicate key value violates unique constraint "user_email_key"
+DETAIL:  Key (email)=(jeff@mail.com) already exists.
+STATEMENT:  INSERT INTO "public"."user" ("email", "password", "username", "createdAt", "updatedAt") values ($1, $2, $3, $4, $5) RETURNING *
+ERROR:  invalid input syntax for integer: "NaN"
+STATEMENT:  DELETE  FROM "public"."user" AS "user"  WHERE "user"."id" IN ($1,$2,$3)  RETURNING *
+ERROR:  duplicate key value violates unique constraint "user_email_key"
+DETAIL:  Key (email)=(charles@mail.com) already exists.
+STATEMENT:  INSERT INTO "public"."user" ("email", "password", "username", "createdAt", "updatedAt") values ($1, $2, $3, $4, $5) RETURNING *
+ERROR:  duplicate key value violates unique constraint "user_email_key"
+DETAIL:  Key (email)=(jeff@mail.com) already exists.
+STATEMENT:  INSERT INTO "public"."user" ("email", "password", "username", "createdAt", "updatedAt") values ($1, $2, $3, $4, $5) RETURNING *
+ERROR:  invalid input syntax for integer: "NaN"
+STATEMENT:  DELETE  FROM "public"."user" AS "user"  WHERE "user"."id" IN ($1,$2,$3)  RETURNING *
+ERROR:  duplicate key value violates unique constraint "user_email_key"
+DETAIL:  Key (email)=(charles@mail.com) already exists.
+STATEMENT:  INSERT INTO "public"."user" ("email", "password", "username", "createdAt", "updatedAt") values ($1, $2, $3, $4, $5) RETURNING *
+ERROR:  duplicate key value violates unique constraint "user_email_key"
+DETAIL:  Key (email)=(janice@mail.com) already exists.
+STATEMENT:  INSERT INTO "public"."user" ("email", "password", "username", "createdAt", "updatedAt") values ($1, $2, $3, $4, $5) RETURNING *
+ERROR:  duplicate key value violates unique constraint "user_email_key"
+DETAIL:  Key (email)=(jeff@mail.com) already exists.
+STATEMENT:  INSERT INTO "public"."user" ("email", "password", "username", "createdAt", "updatedAt") values ($1, $2, $3, $4, $5) RETURNING *
+ERROR:  invalid input syntax for integer: "NaN"
+STATEMENT:  DELETE  FROM "public"."user" AS "user"  WHERE "user"."id" IN ($1,$2,$3)  RETURNING *
+ERROR:  duplicate key value violates unique constraint "user_email_key"
+DETAIL:  Key (email)=(charles@mail.com) already exists.
+STATEMENT:  INSERT INTO "public"."user" ("email", "password", "username", "createdAt", "updatedAt") values ($1, $2, $3, $4, $5) RETURNING *
+ERROR:  duplicate key value violates unique constraint "user_email_key"
+DETAIL:  Key (email)=(janice@mail.com) already exists.
+STATEMENT:  INSERT INTO "public"."user" ("email", "password", "username", "createdAt", "updatedAt") values ($1, $2, $3, $4, $5) RETURNING *
+ERROR:  duplicate key value violates unique constraint "user_email_key"
+DETAIL:  Key (email)=(janice@mail.com) already exists.
+STATEMENT:  INSERT INTO "public"."user" ("email", "password", "username", "createdAt", "updatedAt") values ($1, $2, $3, $4, $5) RETURNING *
+ERROR:  invalid input syntax for integer: "NaN"
+STATEMENT:  DELETE  FROM "public"."user" AS "user"  WHERE "user"."id" IN ($1,$2,$3)  RETURNING *
+ERROR:  duplicate key value violates unique constraint "user_email_key"
+DETAIL:  Key (email)=(jeff@mail.com) already exists.
+STATEMENT:  INSERT INTO "public"."user" ("email", "password", "username", "createdAt", "updatedAt") values ($1, $2, $3, $4, $5) RETURNING *
+ERROR:  duplicate key value violates unique constraint "user_email_key"
+DETAIL:  Key (email)=(charles@mail.com) already exists.
+STATEMENT:  INSERT INTO "public"."user" ("email", "password", "username", "createdAt", "updatedAt") values ($1, $2, $3, $4, $5) RETURNING *
+ERROR:  duplicate key value violates unique constraint "user_email_key"
+DETAIL:  Key (email)=(charles@mail.com) already exists.
+STATEMENT:  INSERT INTO "public"."user" ("email", "password", "username", "createdAt", "updatedAt") values ($1, $2, $3, $4, $5) RETURNING *
+ERROR:  duplicate key value violates unique constraint "user_email_key"
+DETAIL:  Key (email)=(janice@mail.com) already exists.
+STATEMENT:  INSERT INTO "public"."user" ("email", "password", "username", "createdAt", "updatedAt") values ($1, $2, $3, $4, $5) RETURNING *
+ERROR:  duplicate key value violates unique constraint "user_email_key"
+DETAIL:  Key (email)=(jeff@mail.com) already exists.
+STATEMENT:  INSERT INTO "public"."user" ("email", "password", "username", "createdAt", "updatedAt") values ($1, $2, $3, $4, $5) RETURNING *
+ERROR:  invalid input syntax for integer: "NaN"
+STATEMENT:  DELETE  FROM "public"."user" AS "user"  WHERE "user"."id" IN ($1,$2,$3)  RETURNING *
+ERROR:  duplicate key value violates unique constraint "user_email_key"
+DETAIL:  Key (email)=(charles@mail.com) already exists.
+STATEMENT:  INSERT INTO "public"."user" ("email", "password", "username", "createdAt", "updatedAt") values ($1, $2, $3, $4, $5) RETURNING *
+ERROR:  invalid input syntax for integer: "NaN"
+STATEMENT:  DELETE  FROM "public"."user" AS "user"  WHERE "user"."id" IN ($1,$2,$3)  RETURNING *
+ERROR:  duplicate key value violates unique constraint "user_email_key"
+DETAIL:  Key (email)=(jeff@mail.com) already exists.
+STATEMENT:  INSERT INTO "public"."user" ("email", "password", "username", "createdAt", "updatedAt") values ($1, $2, $3, $4, $5) RETURNING *
+ERROR:  duplicate key value violates unique constraint "user_email_key"
+DETAIL:  Key (email)=(janice@mail.com) already exists.
+STATEMENT:  INSERT INTO "public"."user" ("email", "password", "username", "createdAt", "updatedAt") values ($1, $2, $3, $4, $5) RETURNING *
+ERROR:  duplicate key value violates unique constraint "user_email_key"
+DETAIL:  Key (email)=(janice@mail.com) already exists.
+STATEMENT:  INSERT INTO "public"."user" ("email", "password", "username", "createdAt", "updatedAt") values ($1, $2, $3, $4, $5) RETURNING *
+ERROR:  duplicate key value violates unique constraint "user_email_key"
+DETAIL:  Key (email)=(charles@mail.com) already exists.
+STATEMENT:  INSERT INTO "public"."user" ("email", "password", "username", "createdAt", "updatedAt") values ($1, $2, $3, $4, $5) RETURNING *
+ERROR:  duplicate key value violates unique constraint "user_email_key"
+DETAIL:  Key (email)=(jeff@mail.com) already exists.
+STATEMENT:  INSERT INTO "public"."user" ("email", "password", "username", "createdAt", "updatedAt") values ($1, $2, $3, $4, $5) RETURNING *
+ERROR:  invalid input syntax for integer: "NaN"
+STATEMENT:  DELETE  FROM "public"."user" AS "user"  WHERE "user"."id" IN ($1,$2,$3)  RETURNING *
+ERROR:  duplicate key value violates unique constraint "user_email_key"
+DETAIL:  Key (email)=(charles@mail.com) already exists.
+STATEMENT:  INSERT INTO "public"."user" ("email", "password", "username", "createdAt", "updatedAt") values ($1, $2, $3, $4, $5) RETURNING *
+ERROR:  duplicate key value violates unique constraint "user_email_key"
+DETAIL:  Key (email)=(janice@mail.com) already exists.
+STATEMENT:  INSERT INTO "public"."user" ("email", "password", "username", "createdAt", "updatedAt") values ($1, $2, $3, $4, $5) RETURNING *
+ERROR:  invalid input syntax for integer: "NaN"
+STATEMENT:  DELETE  FROM "public"."user" AS "user"  WHERE "user"."id" IN ($1,$2,$3)  RETURNING *
+ERROR:  duplicate key value violates unique constraint "user_email_key"
+DETAIL:  Key (email)=(jeff@mail.com) already exists.
+STATEMENT:  INSERT INTO "public"."user" ("email", "password", "username", "createdAt", "updatedAt") values ($1, $2, $3, $4, $5) RETURNING *
+ERROR:  duplicate key value violates unique constraint "user_email_key"
+DETAIL:  Key (email)=(jeff@mail.com) already exists.
+STATEMENT:  INSERT INTO "public"."user" ("email", "password", "username", "createdAt", "updatedAt") values ($1, $2, $3, $4, $5) RETURNING *
+ERROR:  duplicate key value violates unique constraint "user_email_key"
+DETAIL:  Key (email)=(janice@mail.com) already exists.
+STATEMENT:  INSERT INTO "public"."user" ("email", "password", "username", "createdAt", "updatedAt") values ($1, $2, $3, $4, $5) RETURNING *
+ERROR:  invalid input syntax for integer: "NaN"
+STATEMENT:  DELETE  FROM "public"."user" AS "user"  WHERE "user"."id" IN ($1,$2,$3)  RETURNING *
+ERROR:  duplicate key value violates unique constraint "user_email_key"
+DETAIL:  Key (email)=(charles@mail.com) already exists.
+STATEMENT:  INSERT INTO "public"."user" ("email", "password", "username", "createdAt", "updatedAt") values ($1, $2, $3, $4, $5) RETURNING *
+ERROR:  duplicate key value violates unique constraint "user_email_key"
+DETAIL:  Key (email)=(janice@mail.com) already exists.
+STATEMENT:  INSERT INTO "public"."user" ("email", "password", "username", "createdAt", "updatedAt") values ($1, $2, $3, $4, $5) RETURNING *
+ERROR:  duplicate key value violates unique constraint "user_email_key"
+DETAIL:  Key (email)=(charles@mail.com) already exists.
+STATEMENT:  INSERT INTO "public"."user" ("email", "password", "username", "createdAt", "updatedAt") values ($1, $2, $3, $4, $5) RETURNING *
+ERROR:  duplicate key value violates unique constraint "user_email_key"
+DETAIL:  Key (email)=(jeff@mail.com) already exists.
+STATEMENT:  INSERT INTO "public"."user" ("email", "password", "username", "createdAt", "updatedAt") values ($1, $2, $3, $4, $5) RETURNING *
+ERROR:  invalid input syntax for integer: "NaN"
+STATEMENT:  DELETE  FROM "public"."user" AS "user"  WHERE "user"."id" IN ($1,$2,$3)  RETURNING *
+ERROR:  duplicate key value violates unique constraint "user_email_key"
+DETAIL:  Key (email)=(janice@mail.com) already exists.
+STATEMENT:  INSERT INTO "public"."user" ("email", "password", "username", "createdAt", "updatedAt") values ($1, $2, $3, $4, $5) RETURNING *
+ERROR:  invalid input syntax for integer: "NaN"
+STATEMENT:  DELETE  FROM "public"."user" AS "user"  WHERE "user"."id" IN ($1,$2,$3)  RETURNING *
+ERROR:  duplicate key value violates unique constraint "user_email_key"
+DETAIL:  Key (email)=(charles@mail.com) already exists.
+STATEMENT:  INSERT INTO "public"."user" ("email", "password", "username", "createdAt", "updatedAt") values ($1, $2, $3, $4, $5) RETURNING *
+ERROR:  duplicate key value violates unique constraint "user_email_key"
+DETAIL:  Key (email)=(jeff@mail.com) already exists.
+STATEMENT:  INSERT INTO "public"."user" ("email", "password", "username", "createdAt", "updatedAt") values ($1, $2, $3, $4, $5) RETURNING *
+ERROR:  invalid input syntax for integer: "id=1"
+STATEMENT:  SELECT "user"."email", "user"."password", "user"."username", "user"."firstname", "user"."lastname", "user"."age", "user"."programminglanguage", "user"."occupation", "user"."id", "user"."createdAt", "user"."updatedAt" FROM "public"."user" AS "user"  WHERE "user"."id" = $1 
+ERROR:  duplicate key value violates unique constraint "user_email_key"
+DETAIL:  Key (email)=(charles@mail.com) already exists.
+STATEMENT:  INSERT INTO "public"."user" ("email", "password", "username", "createdAt", "updatedAt") values ($1, $2, $3, $4, $5) RETURNING *
+ERROR:  duplicate key value violates unique constraint "user_email_key"
+DETAIL:  Key (email)=(janice@mail.com) already exists.
+STATEMENT:  INSERT INTO "public"."user" ("email", "password", "username", "createdAt", "updatedAt") values ($1, $2, $3, $4, $5) RETURNING *
+ERROR:  duplicate key value violates unique constraint "user_email_key"
+DETAIL:  Key (email)=(jeff@mail.com) already exists.
+STATEMENT:  INSERT INTO "public"."user" ("email", "password", "username", "createdAt", "updatedAt") values ($1, $2, $3, $4, $5) RETURNING *
+ERROR:  invalid input syntax for integer: "NaN"
+STATEMENT:  DELETE  FROM "public"."user" AS "user"  WHERE "user"."id" IN ($1,$2,$3)  RETURNING *
+ERROR:  invalid input syntax for integer: "id=1"
+STATEMENT:  SELECT "user"."email", "user"."password", "user"."username", "user"."firstname", "user"."lastname", "user"."age", "user"."programminglanguage", "user"."occupation", "user"."id", "user"."createdAt", "user"."updatedAt" FROM "public"."user" AS "user"  WHERE "user"."id" = $1 
+ERROR:  duplicate key value violates unique constraint "user_email_key"
+DETAIL:  Key (email)=(jeff@mail.com) already exists.
+STATEMENT:  INSERT INTO "public"."user" ("email", "password", "username", "createdAt", "updatedAt") values ($1, $2, $3, $4, $5) RETURNING *
+ERROR:  duplicate key value violates unique constraint "user_email_key"
+DETAIL:  Key (email)=(charles@mail.com) already exists.
+STATEMENT:  INSERT INTO "public"."user" ("email", "password", "username", "createdAt", "updatedAt") values ($1, $2, $3, $4, $5) RETURNING *
+ERROR:  invalid input syntax for integer: "NaN"
+STATEMENT:  DELETE  FROM "public"."user" AS "user"  WHERE "user"."id" IN ($1,$2,$3)  RETURNING *
+ERROR:  duplicate key value violates unique constraint "user_email_key"
+DETAIL:  Key (email)=(janice@mail.com) already exists.
+STATEMENT:  INSERT INTO "public"."user" ("email", "password", "username", "createdAt", "updatedAt") values ($1, $2, $3, $4, $5) RETURNING *
+ERROR:  invalid input syntax for integer: "id=1"
+STATEMENT:  SELECT "user"."email", "user"."password", "user"."username", "user"."firstname", "user"."lastname", "user"."age", "user"."programminglanguage", "user"."occupation", "user"."id", "user"."createdAt", "user"."updatedAt" FROM "public"."user" AS "user"  WHERE "user"."id" = $1 
+ERROR:  duplicate key value violates unique constraint "user_email_key"
+DETAIL:  Key (email)=(jeff@mail.com) already exists.
+STATEMENT:  INSERT INTO "public"."user" ("email", "password", "username", "createdAt", "updatedAt") values ($1, $2, $3, $4, $5) RETURNING *
+ERROR:  duplicate key value violates unique constraint "user_email_key"
+DETAIL:  Key (email)=(janice@mail.com) already exists.
+STATEMENT:  INSERT INTO "public"."user" ("email", "password", "username", "createdAt", "updatedAt") values ($1, $2, $3, $4, $5) RETURNING *
+ERROR:  duplicate key value violates unique constraint "user_email_key"
+DETAIL:  Key (email)=(charles@mail.com) already exists.
+STATEMENT:  INSERT INTO "public"."user" ("email", "password", "username", "createdAt", "updatedAt") values ($1, $2, $3, $4, $5) RETURNING *
+ERROR:  invalid input syntax for integer: "NaN"
+STATEMENT:  DELETE  FROM "public"."user" AS "user"  WHERE "user"."id" IN ($1,$2,$3)  RETURNING *
+ERROR:  duplicate key value violates unique constraint "user_email_key"
+DETAIL:  Key (email)=(jeff@mail.com) already exists.
+STATEMENT:  INSERT INTO "public"."user" ("email", "password", "username", "createdAt", "updatedAt") values ($1, $2, $3, $4, $5) RETURNING *
+ERROR:  invalid input syntax for integer: "NaN"
+STATEMENT:  DELETE  FROM "public"."user" AS "user"  WHERE "user"."id" IN ($1,$2,$3)  RETURNING *
+ERROR:  duplicate key value violates unique constraint "user_email_key"
+DETAIL:  Key (email)=(charles@mail.com) already exists.
+STATEMENT:  INSERT INTO "public"."user" ("email", "password", "username", "createdAt", "updatedAt") values ($1, $2, $3, $4, $5) RETURNING *
+ERROR:  duplicate key value violates unique constraint "user_email_key"
+DETAIL:  Key (email)=(janice@mail.com) already exists.
+STATEMENT:  INSERT INTO "public"."user" ("email", "password", "username", "createdAt", "updatedAt") values ($1, $2, $3, $4, $5) RETURNING *
+ERROR:  duplicate key value violates unique constraint "user_email_key"
+DETAIL:  Key (email)=(janice@mail.com) already exists.
+STATEMENT:  INSERT INTO "public"."user" ("email", "password", "username", "createdAt", "updatedAt") values ($1, $2, $3, $4, $5) RETURNING *
+ERROR:  invalid input syntax for integer: "NaN"
+STATEMENT:  DELETE  FROM "public"."user" AS "user"  WHERE "user"."id" IN ($1,$2,$3)  RETURNING *
+ERROR:  duplicate key value violates unique constraint "user_email_key"
+DETAIL:  Key (email)=(charles@mail.com) already exists.
+STATEMENT:  INSERT INTO "public"."user" ("email", "password", "username", "createdAt", "updatedAt") values ($1, $2, $3, $4, $5) RETURNING *
+ERROR:  duplicate key value violates unique constraint "user_email_key"
+DETAIL:  Key (email)=(jeff@mail.com) already exists.
+STATEMENT:  INSERT INTO "public"."user" ("email", "password", "username", "createdAt", "updatedAt") values ($1, $2, $3, $4, $5) RETURNING *
+ERROR:  duplicate key value violates unique constraint "user_email_key"
+DETAIL:  Key (email)=(jeff@mail.com) already exists.
+STATEMENT:  INSERT INTO "public"."user" ("email", "password", "username", "createdAt", "updatedAt") values ($1, $2, $3, $4, $5) RETURNING *
+ERROR:  duplicate key value violates unique constraint "user_email_key"
+DETAIL:  Key (email)=(janice@mail.com) already exists.
+STATEMENT:  INSERT INTO "public"."user" ("email", "password", "username", "createdAt", "updatedAt") values ($1, $2, $3, $4, $5) RETURNING *
+ERROR:  invalid input syntax for integer: "NaN"
+STATEMENT:  DELETE  FROM "public"."user" AS "user"  WHERE "user"."id" IN ($1,$2,$3)  RETURNING *
+ERROR:  duplicate key value violates unique constraint "user_email_key"
+DETAIL:  Key (email)=(charles@mail.com) already exists.
+STATEMENT:  INSERT INTO "public"."user" ("email", "password", "username", "createdAt", "updatedAt") values ($1, $2, $3, $4, $5) RETURNING *
+ERROR:  duplicate key value violates unique constraint "user_email_key"
+DETAIL:  Key (email)=(jeff@mail.com) already exists.
+STATEMENT:  INSERT INTO "public"."user" ("email", "password", "username", "createdAt", "updatedAt") values ($1, $2, $3, $4, $5) RETURNING *
+ERROR:  duplicate key value violates unique constraint "user_email_key"
+DETAIL:  Key (email)=(charles@mail.com) already exists.
+STATEMENT:  INSERT INTO "public"."user" ("email", "password", "username", "createdAt", "updatedAt") values ($1, $2, $3, $4, $5) RETURNING *
+ERROR:  invalid input syntax for integer: "NaN"
+STATEMENT:  DELETE  FROM "public"."user" AS "user"  WHERE "user"."id" IN ($1,$2,$3)  RETURNING *
+ERROR:  duplicate key value violates unique constraint "user_email_key"
+DETAIL:  Key (email)=(janice@mail.com) already exists.
+STATEMENT:  INSERT INTO "public"."user" ("email", "password", "username", "createdAt", "updatedAt") values ($1, $2, $3, $4, $5) RETURNING *
+ERROR:  duplicate key value violates unique constraint "user_email_key"
+DETAIL:  Key (email)=(charles@mail.com) already exists.
+STATEMENT:  INSERT INTO "public"."user" ("email", "password", "username", "createdAt", "updatedAt") values ($1, $2, $3, $4, $5) RETURNING *
+ERROR:  invalid input syntax for integer: "NaN"
+STATEMENT:  DELETE  FROM "public"."user" AS "user"  WHERE "user"."id" IN ($1,$2,$3)  RETURNING *
+ERROR:  duplicate key value violates unique constraint "user_email_key"
+DETAIL:  Key (email)=(jeff@mail.com) already exists.
+STATEMENT:  INSERT INTO "public"."user" ("email", "password", "username", "createdAt", "updatedAt") values ($1, $2, $3, $4, $5) RETURNING *
+ERROR:  duplicate key value violates unique constraint "user_email_key"
+DETAIL:  Key (email)=(janice@mail.com) already exists.
+STATEMENT:  INSERT INTO "public"."user" ("email", "password", "username", "createdAt", "updatedAt") values ($1, $2, $3, $4, $5) RETURNING *
+ERROR:  duplicate key value violates unique constraint "user_email_key"
+DETAIL:  Key (email)=(janice@mail.com) already exists.
+STATEMENT:  INSERT INTO "public"."user" ("email", "password", "username", "createdAt", "updatedAt") values ($1, $2, $3, $4, $5) RETURNING *
+ERROR:  duplicate key value violates unique constraint "user_email_key"
+DETAIL:  Key (email)=(charles@mail.com) already exists.
+STATEMENT:  INSERT INTO "public"."user" ("email", "password", "username", "createdAt", "updatedAt") values ($1, $2, $3, $4, $5) RETURNING *
+ERROR:  duplicate key value violates unique constraint "user_email_key"
+DETAIL:  Key (email)=(jeff@mail.com) already exists.
+STATEMENT:  INSERT INTO "public"."user" ("email", "password", "username", "createdAt", "updatedAt") values ($1, $2, $3, $4, $5) RETURNING *
+ERROR:  invalid input syntax for integer: "NaN"
+STATEMENT:  DELETE  FROM "public"."user" AS "user"  WHERE "user"."id" IN ($1,$2,$3)  RETURNING *
+ERROR:  duplicate key value violates unique constraint "user_email_key"
+DETAIL:  Key (email)=(charles@mail.com) already exists.
+STATEMENT:  INSERT INTO "public"."user" ("email", "password", "username", "createdAt", "updatedAt") values ($1, $2, $3, $4, $5) RETURNING *
+ERROR:  invalid input syntax for integer: "NaN"
+STATEMENT:  DELETE  FROM "public"."user" AS "user"  WHERE "user"."id" IN ($1,$2,$3)  RETURNING *
+ERROR:  duplicate key value violates unique constraint "user_email_key"
+DETAIL:  Key (email)=(jeff@mail.com) already exists.
+STATEMENT:  INSERT INTO "public"."user" ("email", "password", "username", "createdAt", "updatedAt") values ($1, $2, $3, $4, $5) RETURNING *
+ERROR:  duplicate key value violates unique constraint "user_email_key"
+DETAIL:  Key (email)=(janice@mail.com) already exists.
+STATEMENT:  INSERT INTO "public"."user" ("email", "password", "username", "createdAt", "updatedAt") values ($1, $2, $3, $4, $5) RETURNING *
+ERROR:  duplicate key value violates unique constraint "user_email_key"
+DETAIL:  Key (email)=(jeff@mail.com) already exists.
+STATEMENT:  INSERT INTO "public"."user" ("email", "password", "username", "createdAt", "updatedAt") values ($1, $2, $3, $4, $5) RETURNING *
+ERROR:  duplicate key value violates unique constraint "user_email_key"
+DETAIL:  Key (email)=(janice@mail.com) already exists.
+STATEMENT:  INSERT INTO "public"."user" ("email", "password", "username", "createdAt", "updatedAt") values ($1, $2, $3, $4, $5) RETURNING *
+ERROR:  invalid input syntax for integer: "NaN"
+STATEMENT:  DELETE  FROM "public"."user" AS "user"  WHERE "user"."id" IN ($1,$2,$3)  RETURNING *
+ERROR:  duplicate key value violates unique constraint "user_email_key"
+DETAIL:  Key (email)=(charles@mail.com) already exists.
+STATEMENT:  INSERT INTO "public"."user" ("email", "password", "username", "createdAt", "updatedAt") values ($1, $2, $3, $4, $5) RETURNING *
+ERROR:  duplicate key value violates unique constraint "user_email_key"
+DETAIL:  Key (email)=(charles@mail.com) already exists.
+STATEMENT:  INSERT INTO "public"."user" ("email", "password", "username", "createdAt", "updatedAt") values ($1, $2, $3, $4, $5) RETURNING *
+ERROR:  invalid input syntax for integer: "NaN"
+STATEMENT:  DELETE  FROM "public"."user" AS "user"  WHERE "user"."id" IN ($1,$2,$3)  RETURNING *
+ERROR:  duplicate key value violates unique constraint "user_email_key"
+DETAIL:  Key (email)=(janice@mail.com) already exists.
+STATEMENT:  INSERT INTO "public"."user" ("email", "password", "username", "createdAt", "updatedAt") values ($1, $2, $3, $4, $5) RETURNING *
+ERROR:  duplicate key value violates unique constraint "user_email_key"
+DETAIL:  Key (email)=(jeff@mail.com) already exists.
+STATEMENT:  INSERT INTO "public"."user" ("email", "password", "username", "createdAt", "updatedAt") values ($1, $2, $3, $4, $5) RETURNING *
+ERROR:  duplicate key value violates unique constraint "user_email_key"
+DETAIL:  Key (email)=(charles@mail.com) already exists.
+STATEMENT:  INSERT INTO "public"."user" ("email", "password", "username", "createdAt", "updatedAt") values ($1, $2, $3, $4, $5) RETURNING *
+ERROR:  duplicate key value violates unique constraint "user_email_key"
+DETAIL:  Key (email)=(janice@mail.com) already exists.
+STATEMENT:  INSERT INTO "public"."user" ("email", "password", "username", "createdAt", "updatedAt") values ($1, $2, $3, $4, $5) RETURNING *
+ERROR:  duplicate key value violates unique constraint "user_email_key"
+DETAIL:  Key (email)=(jeff@mail.com) already exists.
+STATEMENT:  INSERT INTO "public"."user" ("email", "password", "username", "createdAt", "updatedAt") values ($1, $2, $3, $4, $5) RETURNING *
+ERROR:  invalid input syntax for integer: "NaN"
+STATEMENT:  DELETE  FROM "public"."user" AS "user"  WHERE "user"."id" IN ($1,$2,$3)  RETURNING *
+ERROR:  duplicate key value violates unique constraint "user_email_key"
+DETAIL:  Key (email)=(jeff@mail.com) already exists.
+STATEMENT:  INSERT INTO "public"."user" ("email", "password", "username", "createdAt", "updatedAt") values ($1, $2, $3, $4, $5) RETURNING *
+ERROR:  duplicate key value violates unique constraint "user_email_key"
+DETAIL:  Key (email)=(charles@mail.com) already exists.
+STATEMENT:  INSERT INTO "public"."user" ("email", "password", "username", "createdAt", "updatedAt") values ($1, $2, $3, $4, $5) RETURNING *
+ERROR:  duplicate key value violates unique constraint "user_email_key"
+DETAIL:  Key (email)=(janice@mail.com) already exists.
+STATEMENT:  INSERT INTO "public"."user" ("email", "password", "username", "createdAt", "updatedAt") values ($1, $2, $3, $4, $5) RETURNING *
+ERROR:  invalid input syntax for integer: "NaN"
+STATEMENT:  DELETE  FROM "public"."user" AS "user"  WHERE "user"."id" IN ($1,$2,$3)  RETURNING *
+ERROR:  duplicate key value violates unique constraint "user_email_key"
+DETAIL:  Key (email)=(jeff@mail.com) already exists.
+STATEMENT:  INSERT INTO "public"."user" ("email", "password", "username", "createdAt", "updatedAt") values ($1, $2, $3, $4, $5) RETURNING *
+ERROR:  duplicate key value violates unique constraint "user_email_key"
+DETAIL:  Key (email)=(janice@mail.com) already exists.
+STATEMENT:  INSERT INTO "public"."user" ("email", "password", "username", "createdAt", "updatedAt") values ($1, $2, $3, $4, $5) RETURNING *
+ERROR:  duplicate key value violates unique constraint "user_email_key"
+DETAIL:  Key (email)=(charles@mail.com) already exists.
+STATEMENT:  INSERT INTO "public"."user" ("email", "password", "username", "createdAt", "updatedAt") values ($1, $2, $3, $4, $5) RETURNING *
+ERROR:  invalid input syntax for integer: "NaN"
+STATEMENT:  DELETE  FROM "public"."user" AS "user"  WHERE "user"."id" IN ($1,$2,$3)  RETURNING *
+ERROR:  duplicate key value violates unique constraint "user_email_key"
+DETAIL:  Key (email)=(jeff@mail.com) already exists.
+STATEMENT:  INSERT INTO "public"."user" ("email", "password", "username", "createdAt", "updatedAt") values ($1, $2, $3, $4, $5) RETURNING *
+ERROR:  invalid input syntax for integer: "NaN"
+STATEMENT:  DELETE  FROM "public"."user" AS "user"  WHERE "user"."id" IN ($1,$2,$3)  RETURNING *
+ERROR:  duplicate key value violates unique constraint "user_email_key"
+DETAIL:  Key (email)=(charles@mail.com) already exists.
+STATEMENT:  INSERT INTO "public"."user" ("email", "password", "username", "createdAt", "updatedAt") values ($1, $2, $3, $4, $5) RETURNING *
+ERROR:  duplicate key value violates unique constraint "user_email_key"
+DETAIL:  Key (email)=(janice@mail.com) already exists.
+STATEMENT:  INSERT INTO "public"."user" ("email", "password", "username", "createdAt", "updatedAt") values ($1, $2, $3, $4, $5) RETURNING *
+ERROR:  duplicate key value violates unique constraint "user_email_key"
+DETAIL:  Key (email)=(jeff@mail.com) already exists.
+STATEMENT:  INSERT INTO "public"."user" ("email", "password", "username", "createdAt", "updatedAt") values ($1, $2, $3, $4, $5) RETURNING *
+ERROR:  duplicate key value violates unique constraint "user_email_key"
+DETAIL:  Key (email)=(janice@mail.com) already exists.
+STATEMENT:  INSERT INTO "public"."user" ("email", "password", "username", "createdAt", "updatedAt") values ($1, $2, $3, $4, $5) RETURNING *
+ERROR:  invalid input syntax for integer: "NaN"
+STATEMENT:  DELETE  FROM "public"."user" AS "user"  WHERE "user"."id" IN ($1,$2,$3)  RETURNING *
+ERROR:  duplicate key value violates unique constraint "user_email_key"
+DETAIL:  Key (email)=(charles@mail.com) already exists.
+STATEMENT:  INSERT INTO "public"."user" ("email", "password", "username", "createdAt", "updatedAt") values ($1, $2, $3, $4, $5) RETURNING *
+ERROR:  duplicate key value violates unique constraint "user_email_key"
+DETAIL:  Key (email)=(jeff@mail.com) already exists.
+STATEMENT:  INSERT INTO "public"."user" ("email", "password", "username", "createdAt", "updatedAt") values ($1, $2, $3, $4, $5) RETURNING *
+ERROR:  duplicate key value violates unique constraint "user_email_key"
+DETAIL:  Key (email)=(janice@mail.com) already exists.
+STATEMENT:  INSERT INTO "public"."user" ("email", "password", "username", "createdAt", "updatedAt") values ($1, $2, $3, $4, $5) RETURNING *
+ERROR:  duplicate key value violates unique constraint "user_email_key"
+DETAIL:  Key (email)=(charles@mail.com) already exists.
+STATEMENT:  INSERT INTO "public"."user" ("email", "password", "username", "createdAt", "updatedAt") values ($1, $2, $3, $4, $5) RETURNING *
+ERROR:  invalid input syntax for integer: "NaN"
+STATEMENT:  DELETE  FROM "public"."user" AS "user"  WHERE "user"."id" IN ($1,$2,$3)  RETURNING *
+ERROR:  invalid input syntax for integer: " "
+STATEMENT:  SELECT "user"."email", "user"."password", "user"."username", "user"."firstname", "user"."lastname", "user"."age", "user"."programminglanguage", "user"."occupation", "user"."id", "user"."createdAt", "user"."updatedAt" FROM "public"."user" AS "user"  WHERE "user"."id" = $1 
+ERROR:  invalid input syntax for integer: " "
+STATEMENT:  SELECT "user"."email", "user"."password", "user"."username", "user"."firstname", "user"."lastname", "user"."age", "user"."programminglanguage", "user"."occupation", "user"."id", "user"."createdAt", "user"."updatedAt" FROM "public"."user" AS "user"  WHERE "user"."id" = $1 
+ERROR:  invalid input syntax for integer: " "
+STATEMENT:  SELECT "user"."email", "user"."password", "user"."username", "user"."firstname", "user"."lastname", "user"."age", "user"."programminglanguage", "user"."occupation", "user"."id", "user"."createdAt", "user"."updatedAt" FROM "public"."user" AS "user"  WHERE "user"."id" = $1 
+ERROR:  invalid input syntax for integer: " "
+STATEMENT:  SELECT "user"."email", "user"."password", "user"."username", "user"."firstname", "user"."lastname", "user"."age", "user"."programminglanguage", "user"."occupation", "user"."id", "user"."createdAt", "user"."updatedAt" FROM "public"."user" AS "user"  WHERE "user"."id" = $1 
+ERROR:  duplicate key value violates unique constraint "user_email_key"
+DETAIL:  Key (email)=(charles@mail.com) already exists.
+STATEMENT:  INSERT INTO "public"."user" ("email", "password", "username", "createdAt", "updatedAt") values ($1, $2, $3, $4, $5) RETURNING *
+ERROR:  duplicate key value violates unique constraint "user_email_key"
+DETAIL:  Key (email)=(janice@mail.com) already exists.
+STATEMENT:  INSERT INTO "public"."user" ("email", "password", "username", "createdAt", "updatedAt") values ($1, $2, $3, $4, $5) RETURNING *
+ERROR:  invalid input syntax for integer: "NaN"
+STATEMENT:  DELETE  FROM "public"."user" AS "user"  WHERE "user"."id" IN ($1,$2,$3)  RETURNING *
+ERROR:  duplicate key value violates unique constraint "user_email_key"
+DETAIL:  Key (email)=(jeff@mail.com) already exists.
+STATEMENT:  INSERT INTO "public"."user" ("email", "password", "username", "createdAt", "updatedAt") values ($1, $2, $3, $4, $5) RETURNING *
+ERROR:  duplicate key value violates unique constraint "user_email_key"
+DETAIL:  Key (email)=(charles@mail.com) already exists.
+STATEMENT:  INSERT INTO "public"."user" ("email", "password", "username", "createdAt", "updatedAt") values ($1, $2, $3, $4, $5) RETURNING *
+ERROR:  invalid input syntax for integer: "NaN"
+STATEMENT:  DELETE  FROM "public"."user" AS "user"  WHERE "user"."id" IN ($1,$2,$3)  RETURNING *
+ERROR:  duplicate key value violates unique constraint "user_email_key"
+DETAIL:  Key (email)=(jeff@mail.com) already exists.
+STATEMENT:  INSERT INTO "public"."user" ("email", "password", "username", "createdAt", "updatedAt") values ($1, $2, $3, $4, $5) RETURNING *
+ERROR:  duplicate key value violates unique constraint "user_email_key"
+DETAIL:  Key (email)=(janice@mail.com) already exists.
+STATEMENT:  INSERT INTO "public"."user" ("email", "password", "username", "createdAt", "updatedAt") values ($1, $2, $3, $4, $5) RETURNING *
+ERROR:  duplicate key value violates unique constraint "user_email_key"
+DETAIL:  Key (email)=(jeff@mail.com) already exists.
+STATEMENT:  INSERT INTO "public"."user" ("email", "password", "username", "createdAt", "updatedAt") values ($1, $2, $3, $4, $5) RETURNING *
+ERROR:  duplicate key value violates unique constraint "user_email_key"
+DETAIL:  Key (email)=(janice@mail.com) already exists.
+STATEMENT:  INSERT INTO "public"."user" ("email", "password", "username", "createdAt", "updatedAt") values ($1, $2, $3, $4, $5) RETURNING *
+ERROR:  duplicate key value violates unique constraint "user_email_key"
+DETAIL:  Key (email)=(charles@mail.com) already exists.
+STATEMENT:  INSERT INTO "public"."user" ("email", "password", "username", "createdAt", "updatedAt") values ($1, $2, $3, $4, $5) RETURNING *
+ERROR:  invalid input syntax for integer: "NaN"
+STATEMENT:  DELETE  FROM "public"."user" AS "user"  WHERE "user"."id" IN ($1,$2,$3)  RETURNING *
+ERROR:  duplicate key value violates unique constraint "user_email_key"
+DETAIL:  Key (email)=(jeff@mail.com) already exists.
+STATEMENT:  INSERT INTO "public"."user" ("email", "password", "username", "createdAt", "updatedAt") values ($1, $2, $3, $4, $5) RETURNING *
+ERROR:  invalid input syntax for integer: "NaN"
+STATEMENT:  DELETE  FROM "public"."user" AS "user"  WHERE "user"."id" IN ($1,$2,$3)  RETURNING *
+ERROR:  duplicate key value violates unique constraint "user_email_key"
+DETAIL:  Key (email)=(charles@mail.com) already exists.
+STATEMENT:  INSERT INTO "public"."user" ("email", "password", "username", "createdAt", "updatedAt") values ($1, $2, $3, $4, $5) RETURNING *
+ERROR:  duplicate key value violates unique constraint "user_email_key"
+DETAIL:  Key (email)=(janice@mail.com) already exists.
+STATEMENT:  INSERT INTO "public"."user" ("email", "password", "username", "createdAt", "updatedAt") values ($1, $2, $3, $4, $5) RETURNING *
+ERROR:  duplicate key value violates unique constraint "user_email_key"
+DETAIL:  Key (email)=(jeff@mail.com) already exists.
+STATEMENT:  INSERT INTO "public"."user" ("email", "password", "username", "createdAt", "updatedAt") values ($1, $2, $3, $4, $5) RETURNING *
+ERROR:  duplicate key value violates unique constraint "user_email_key"
+DETAIL:  Key (email)=(janice@mail.com) already exists.
+STATEMENT:  INSERT INTO "public"."user" ("email", "password", "username", "createdAt", "updatedAt") values ($1, $2, $3, $4, $5) RETURNING *
+ERROR:  invalid input syntax for integer: "NaN"
+STATEMENT:  DELETE  FROM "public"."user" AS "user"  WHERE "user"."id" IN ($1,$2,$3)  RETURNING *
+ERROR:  duplicate key value violates unique constraint "user_email_key"
+DETAIL:  Key (email)=(charles@mail.com) already exists.
+STATEMENT:  INSERT INTO "public"."user" ("email", "password", "username", "createdAt", "updatedAt") values ($1, $2, $3, $4, $5) RETURNING *
+ERROR:  duplicate key value violates unique constraint "user_email_key"
+DETAIL:  Key (email)=(jeff@mail.com) already exists.
+STATEMENT:  INSERT INTO "public"."user" ("email", "password", "username", "createdAt", "updatedAt") values ($1, $2, $3, $4, $5) RETURNING *
+ERROR:  invalid input syntax for integer: "NaN"
+STATEMENT:  DELETE  FROM "public"."user" AS "user"  WHERE "user"."id" IN ($1,$2,$3)  RETURNING *
+ERROR:  duplicate key value violates unique constraint "user_email_key"
+DETAIL:  Key (email)=(charles@mail.com) already exists.
+STATEMENT:  INSERT INTO "public"."user" ("email", "password", "username", "createdAt", "updatedAt") values ($1, $2, $3, $4, $5) RETURNING *
+ERROR:  duplicate key value violates unique constraint "user_email_key"
+DETAIL:  Key (email)=(janice@mail.com) already exists.
+STATEMENT:  INSERT INTO "public"."user" ("email", "password", "username", "createdAt", "updatedAt") values ($1, $2, $3, $4, $5) RETURNING *
