@@ -33,9 +33,33 @@ module.exports.routes = {
   ***************************************************************************/
 
   '/': {
-    view: 'login'
+    view: 'homepage'
   },
 
+  /***************************************************************************
+   *
+   * Login/Logout
+   * Signup
+   *
+   * *************************************************************************/
+
+
+  'POST /login': {
+    controller: 'AuthController',
+    action: 'login'
+  },
+  'GET /logout': {
+    controller: 'AuthController',
+    action: 'logout'
+  },
+  'GET /signup': {
+    view: 'user/signup'
+  },
+  'POST /signup': {
+    controller: 'UserController',
+    action: 'create'
+  },
+  
   /***************************************************************************
   *                                                                          *
   * Custom routes here...                                                    *
@@ -45,13 +69,7 @@ module.exports.routes = {
   * for configuration options and examples.                                  *
   *                                                                          *
   ***************************************************************************/
-  'GET /signup': {
-    view: 'user/signup'
-  },
-  'POST /signup': {
-    controller: 'UserController',
-    action: 'create'
-  },
+
   'GET /query': {
     view: 'user/queryDone'
   },
@@ -63,14 +81,7 @@ module.exports.routes = {
     controller: 'QueryController',
     action: 'show'
   },
-  'POST /user': 'UserController.signup',
-  
-  'POST /login': {
-    controller: 'AuthController',
-    action: 'login'
-  },
-  'GET /logout': {
-    controller: 'AuthController',
-    action: 'logout'
-  }
+  'POST /user': 'UserController.signup'
+
+
 };
