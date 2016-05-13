@@ -16,50 +16,45 @@ TODO make RESTful api controllers
 module.exports = {
 
   show: function(req,res,next) {
-    //TODO this will be a redirect after you login
-  console.log('in /api/controllers/UserController.show')
-  User.find({id: /*req.body.id*/ req.params['id'] }).exec(function (err, idFound){
-    if (err) return res.negotiate(err);
-    var idJSON = JSON.stringify(idFound) // convert object to JSON
-    res.ok(idJSON)
-  sails.log('Wow, there are %d users with this id.  Check it out:', idFound.length, idFound);
-  });
+    User.find({id: /*req.body.id*/ req.params['id'] }).exec(function (err, userdata){
+      if (err) return res.negotiate(err);
+      var idJSON = JSON.stringify(userdata) // convert object to JSON
+      res.ok(idJSON)
+    });
 
   },
-  
 
 
-  create: function(req,res,next) {  
-    //TODO this is  your signup function
-    console.log('in UserController.create')
-    console.log(req)
-    console.log(req.headers['user-agent'])
+
+  create: function(req,res,next) {
     User.create([{
       email: req.body.email,
       password: req.body.password,
       username: req.body.username
     }]).exec({
-      error: function(requ, resu) { res.negotiate() },
+      error: function(err, userdata) { res.negotiate(err) },
 
-      success: function(requ, resu) { 
-                              
-        res.send(`YES!!! created`) 
+      success: function(err, userdata) {
+        // var singleuser = object.filter = (obj, elem) => {
+        //
+        // }
+        res.redirect('/login');
+        // res.render('user/profile', {
+        //  email: singleuser.email
+        // })
       }
     })
   },
 
   post: function(req,res,next) {
     //TODO this is your update functionality after user has logged in
-    console.log('in UserController.post')
   },
 
   destroy: function(req, res,next) {
     //TODO this is your delete user function if user decides to close his/her account
-    console.log('in UserController.destroy')
   },
 
   signup: function(req, res, next) {
-		console.log('in UserController.signup')
 		next()
   },
 

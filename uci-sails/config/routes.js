@@ -46,17 +46,14 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
   'GET /signup': {
-    view: 'signup'
+    view: 'user/signup'
   },
   'POST /signup': {
     controller: 'UserController',
     action: 'create'
   },
   'GET /query': {
-    view: 'queryDB'
-  },
-  'GET /show/': {
-    view: 'queryDone'
+    view: 'user/queryDone'
   },
   'GET /show/:id': {
     controller: 'UserController',
@@ -67,6 +64,7 @@ module.exports.routes = {
     action: 'show'
   },
   'POST /user': 'UserController.signup',
+  
   'POST /login': {
     controller: 'AuthController',
     action: 'login'

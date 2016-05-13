@@ -27,14 +27,12 @@ module.exports = {
         	lowercase: true
         },
         toJSON: function() {
-            console.log("in /models/User function toJSON()")
             var obj = this.toObject();
             console.log(obj)
             return obj;
         }
     },
     beforeCreate: function(user, cb) {
-        console.log("in /models/User function beforeCreate()")
         bcrypt.genSalt(10, function(err, salt) {
             bcrypt.hash(user.password, salt, function(err, hash) {
                 if (err) {
