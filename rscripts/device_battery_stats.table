@@ -1,0 +1,10 @@
+entry_date
+timestamp
+device_id
+charge_rate
+drain_rate
+delta_time
+charging_or_draining
+battery_percentage
+battery_temperature
+battery_voltage
