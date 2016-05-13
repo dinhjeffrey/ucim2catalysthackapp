@@ -8,49 +8,50 @@
 module.exports = {
 
   attributes: {
-    macaddress: {
+    device_id: {
+      type: 'integer',
+      required: true,
+      unique: true
+    },
+    parent_device_id: {
+      type: 'integer',
+      required: false,
+      unique: false
+    },
+
+    company_id: {
+      type: 'integer',
+      required: false,
+      unique: false
+    },
+    device_uuid: {
+      type: 'string',
+      required: true,
+      unique: true
+    },
+    device_type_id: {
+      type: ''
+    },
+    device_type: {
 
     },
-    os: {
+    device_os: {
 
     },
-    model: {
+    home_timezone: {
 
     },
-    capacity: {
+
+
+
+
+    /*UNUSED*/
+    m2_id: {
 
     },
-    provider: {
+    user_id: {
 
-    },
-    display: {
-
-    },
-    location: {
-
-    },
-    usage: {
-
-    },
-    language: {
-
-    },
-    storage: {
-
-    },
-    phonenumber: {
-
-    },
-    serial: {
-
-    },
-    imei: {
-
-    },
-    uptime: {
-      
     }
-
   }
 };
 
