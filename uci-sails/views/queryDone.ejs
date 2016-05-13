@@ -1,13 +1,11 @@
-<form>
 <input type='text' id='input'>
-<input id='submit-yo' type='submit' value='submit'>
-</form>
+<button id='submit-yo' value='submit'></button>
 <div id='info'>THE D</div>
 
 <script src="https://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
 <script>
 $('#submit-yo').click(function(event) {
-	event.preventDefault(); // prevents page from refreshing
+	// event.preventDefault(); // prevents page from refreshing
 	$.ajax({
 		url: 'http://localhost:1337/show/' + $('#input').val(),
 		data: {
