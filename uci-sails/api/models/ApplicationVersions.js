@@ -8,8 +8,9 @@
 module.exports = {
 // 25926841	com.period.tracker.lite	Period Tracker	2.0.6.4	GP International LLC	2	4	5	android.permission.INTERNET android.permission.ACCESS_NETWORK_STATE android.permission.WRITE_EXTERNAL_STORAGE android.permission.VIBRATE	4	0		20672512	NULL	https://lh4.ggpht.com/3NneKQ51rekn6NVjrlQ2z16833MTw253i70YnQXug_GRj0rkbS6NWC3GMdzmEwvQBQ=w300	0	663646	12/20/14 13:52	9/28/15 18:48
   attributes: {
-  	device_id: {
+  	application_version_id: {
   		type: 'integer', // from 'Devices' table
+      primaryKey: true,
       unique: true
   	},
   	package_name: {
@@ -49,7 +50,7 @@ module.exports = {
   		type: 'integer',
   	},
   	ignore_category: {
-  		type: 'NULL'
+  		type: 'string' // NULL
   	},
   	icon_link: {
   		type: 'string'
