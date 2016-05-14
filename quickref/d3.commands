@@ -30,4 +30,23 @@ svg.selectAll("rect")
 		.attr("height", function(d) {
 			return (d * 4)
 		})
+		.attr("fill", function(d) {
+			return `rgb( ${d*10} , 0,0)`
+		})
+</script>
+
+##Clean##
+<script>
+svg.selectAll("rect")
+	.data(dataset)
+	.enter()
+	.append("rect")
+	.attr({
+		x: (d, i) => {return i * (w / dataset.length)},
+		y: (d) => {return h - (d*4)},
+		width: () => {return w / dataset.length-padding},
+		height: (d) => {return d*4},
+		fill: (d) => {return `rgb( ${d*10} , 0,0)`}
+	})
+
 </script>
