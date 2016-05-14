@@ -87,8 +87,8 @@ monthlySales = [
 
 //Function to generate line "path"
 var lineFun = d3.svg.line()
-  .x(function (d) { return d.month*3; })
-  .y(function (d) { return h-d.sales; })
+  .x((d) => { return d.month*3; })
+  .y((d) => { return h-d.sales; })
   .interpolate("linear");
 
 //create our SVG
@@ -110,16 +110,16 @@ var labels = svg.selectAll("text")
   .enter()
   .append("text")
   //.text(function(d){ return d.sales; } )
-  .text(function(d){ return d.sales; })
+  .text((d) => { return d.sales; })
   .attr({
-    x: function(d){ return (d.month*3)-25; },
-    y: function(d){ return h-d.sales; },
+    x: (d) => { return (d.month*3)-25; },
+    y: (d) => { return h-d.sales; },
     "font-size": "12px",
     "font-family": "sans-serif",
     "fill": "#666666",
     "text-anchor": "start",
     "dy": ".35em",
-    "font-weight": function(d,i){
+    "font-weight": (d,i) => {
                       if (i===0 ||  i==(monthlySales.length-1)) {
                         return "bold"; }
                       else {

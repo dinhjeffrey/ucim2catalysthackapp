@@ -48,7 +48,7 @@ module.exports = {
   		type: 'number'
   	},
   	ignore_category: {
-  		type: NULL
+  		type: 'NULL'
   	},
   	icon_link: {
   		type: 'string'
