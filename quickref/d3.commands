@@ -8,14 +8,20 @@ d3.select("body").append("svg").append("rect").attr("width", 50).attr("height", 
 var dataset = [5, 10, 15, 20, 25]
 svg.selectAll("rect")
 	.data(dataset)
-	.enter()
+	.enter() // takes all rectangles and create new ones for each one in our dataset
 	.append("rect")
-		.attr("x", function(d, i) { // (dataset, index)
-			return (i * 21)
+		.attr("x", function(d, i) { // (dataset, index) index is 0,1,2,..
+			return (i * (w / dataset.length))
 		})
-		.attr("y", 0)
-		.attr("width", 20)
-		.attr("height", 100)
+		.attr("y", function(d) { //( x, y) is starting pt
+			return h - (d * 4)
+		})
+		.attr("width", w / dataset.length - padding)
+		.attr("height", function(d) {
+			return (d * 4)
+		})
 
 </script>
+
+##Building a Bar Chart##
 
