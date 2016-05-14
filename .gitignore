@@ -42,6 +42,7 @@
 config/local.js
 config/connection.js
 apptrackdb
+ajax.html
 
 
 ################################################
