@@ -23,7 +23,7 @@ module.exports = {
       required: false,
       unique: false
     },
-    toJson: function() {
+    toJSON: function() {
       var carriers = this.toJson()
       return carriers;
     }

@@ -25,7 +25,7 @@ module.exports = {
         	required: true,
         	unique: true,
         	lowercase: true
-        },
+        }, 
         toJSON: function() {
             var obj = this.toObject();
             return obj;

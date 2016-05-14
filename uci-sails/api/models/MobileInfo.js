@@ -68,6 +68,10 @@ module.exports = {
       required: false,
       unique: false
     },
+    toJSON: function() {
+      var mobileinfo = this.toJSON()
+      return mobileinfo
+    }
   }
 };
 
