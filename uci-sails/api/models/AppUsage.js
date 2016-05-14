@@ -20,7 +20,7 @@ attributes: {
   		type: 'integer'
   	},
   	start_date: {
-  		type: 'string'
+  		type: 'datetime'
   	},
   	run_time: {
   		type: 'integer'

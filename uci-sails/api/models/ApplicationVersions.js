@@ -61,10 +61,10 @@ module.exports = {
   		type: 'integer',
   	},
   	create_date: {
-  		type: 'string'
+  		type: 'datetime'
   	},
   	update_date: {
-  		type: 'string'
+  		type: 'datetime'
   	},
     toJSON: () => {
       var applicationVersions = this.toJSON()
