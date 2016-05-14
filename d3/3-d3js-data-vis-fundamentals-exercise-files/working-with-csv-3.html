@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="d3.min.js" charset="utf-8"></script>
+        <script>
+            var h = 100;
+            var w = 400;
+            var ds; //empty var for dataset (ds)
+            var dsFlat;
+            var dsMap;
+            var salesTotal=0.0;
+            var salesAvg=0.0;
+            var metrics=[];
+            
+            function buildLine() {
+            
+                var lineFun = d3.svg.line()
+                  .x(function (d) { return ((d.month-20130001)/3.25); })
+                  .y(function (d) { return h-d.sales; })
+                  .interpolate("linear");
+                
+                var svg = d3.select("body").append("svg").attr({ width:w, height: h});
+                
+                var viz = svg.append("path")
+                  .attr({
+                    d: lineFun(ds),
+                    "stroke": "purple",
+                    "stroke-width": 2,
+                    "fill": "none"
+                });
+                
+            }
+            
+
+            //get totals
+            function showTotals(){
+
+                // var salesTotal = d3.sum(ds['sales']);
+                // var salesTotal = d3.merge(ds);               
+
+                //sales total
+                for (var i = 0; i < ds.length; i++) {
+                    salesTotal += ds[i]['sales']*1; //*1 to make it a number
+                };
+
+                //sales average
+                salesAvg = salesTotal / ds.length;
+
+                //add metrics to array
+                metrics.push("Sales Total: " + salesTotal);
+                metrics.push("Sales Avg: "+salesAvg.toFixed(2));
+
+//                alert(metrics);
+
+                var t = d3.select("body").append("table");
+
+                //now add total
+                var tr = t.selectAll("tr")
+                    .data(metrics)
+                    .enter()
+                    .append("tr")
+                    .append("td")
+                    .text(function(d){ return d; });
+
+            
+            };
+
+            //call to load data and then build our viz
+            d3.csv("MonthlySales.csv", function(error, data) {
+                
+                //check the file loaded properly
+                if (error) {  //is there an error?
+                    console.log(error);  //if so, log it to the console
+                } else {      //If not we're golden!
+                    console.log("we've got data!");   //Now show me the money!
+                    
+                    //multidimensional array
+                    ds=data;
+                   
+                    buildLine();
+                    showTotals();
+                }    
+            });
+               
+        </script>
+    </head>
+    <body>
+    </body>
+</html>
