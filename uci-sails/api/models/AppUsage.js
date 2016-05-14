@@ -54,7 +54,7 @@ attributes: {
   	package_name: {
   		type: 'string'
   	},
-    toJSON: () => {
+    toJSON: function() {
        var appUsage = this.toJSON()
        return appUsage
       }

@@ -67,7 +67,7 @@ module.exports = {
   	update_date: {
   		type: 'datetime'
   	},
-    toJSON: () => {
+    toJSON: function() {
       var applicationVersions = this.toJSON()
       return applicationVersions
     }

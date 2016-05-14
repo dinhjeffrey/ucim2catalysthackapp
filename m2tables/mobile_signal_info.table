@@ -9,7 +9,6 @@ gsm_asu_level
 lte_dbm
 lte_asu_level
 lte_rsrp
-lte_rsrq
 wcdma_dbm
 wcdma_asu_level
 longitude
