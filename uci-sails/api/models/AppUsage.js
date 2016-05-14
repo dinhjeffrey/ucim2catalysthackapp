@@ -36,6 +36,9 @@ attributes: {
   	run_time: {
   		type: 'integer'
   	},
+    end_date: {
+      type: 'datetime'
+    },
   	continuation: {
   		type: 'boolean'
   	},
