@@ -58,7 +58,7 @@ module.exports = {
       required: false,
       unique: false
     },
-    toJson: function() {
+    toJSON: function() {
       var devicebatterystats = this.toJson;
       return devicebatterystats;
     }
