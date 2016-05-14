@@ -8,8 +8,8 @@
 module.exports = {
 
   attributes: {
-    entry_date: {
-      type: 'integer',
+    entry_date: { // NOT IN TABLE
+      type: 'datetime',
       required: false,
       unique: false
     },
@@ -33,18 +33,18 @@ module.exports = {
       required: false,
       unique: false
     },
-    log_timestamp: {
-      type: 'integer',
+    log_timestamp: { // ###### in table
+      type: 'string',
       required: false,
       unique: false
     },
     package_name: {
-      type: 'integer',
+      type: 'string',
       required: false,
       unique: false
     },
     application_version: {
-      type: 'integer',
+      type: 'string',
       required: false,
       unique: false
     },
@@ -54,7 +54,7 @@ module.exports = {
       unique: false
     },
     version: {
-      type: 'integer',
+      type: 'string',
       required: false,
       unique: false
     },
@@ -138,6 +138,10 @@ module.exports = {
       required: false,
       unique: false
     },
+    toJSON: function() {
+      var obj = this.toObject()
+      return obj
+    }
   }
 };
 
