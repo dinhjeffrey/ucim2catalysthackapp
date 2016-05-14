@@ -18,7 +18,7 @@ module.exports = {
 // 33919	7096	4	9/1/15 0:05	2063506	FALSE	2015	9	1	com.motricity.verizon.ssodownloadable  
 attributes: {
     entry_date: {
-
+      type: 'datetime' // NOT IN TABLE
     },
   	device_id: {
   		type: 'integer', // from 'Devices' table
@@ -37,7 +37,7 @@ attributes: {
   		type: 'integer'
   	},
     end_date: {
-      type: 'datetime'
+      type: 'datetime' // NOT IN TABLE
     },
   	continuation: {
   		type: 'boolean'
