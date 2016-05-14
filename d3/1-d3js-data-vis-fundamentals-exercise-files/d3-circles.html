@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="description" content="Drawing Shapes w/ D3 - cirlce" />
+  <meta charset="utf-8">
+  <title>Drawing SVG Shapes with D3</title>
+  <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+</head>
+<body>
+  <svg width="50" height="50">
+    <circle cx="25" cy="25" r="25" style="fill: blue;" />
+  </svg>
+  <script>
+  d3.select("body")
+  .append("svg")
+    .attr("width", 50)
+    .attr("height", 50)
+  .append("circle")
+    .attr("cx", 25)
+    .attr("cy", 25)
+    .attr("r", 25)
+    .style("fill", "purple");
+  </script>
+</body>
+</html>

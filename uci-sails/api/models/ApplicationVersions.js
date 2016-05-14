@@ -9,7 +9,8 @@ module.exports = {
 // 25926841	com.period.tracker.lite	Period Tracker	2.0.6.4	GP International LLC	2	4	5	android.permission.INTERNET android.permission.ACCESS_NETWORK_STATE android.permission.WRITE_EXTERNAL_STORAGE android.permission.VIBRATE	4	0		20672512	NULL	https://lh4.ggpht.com/3NneKQ51rekn6NVjrlQ2z16833MTw253i70YnQXug_GRj0rkbS6NWC3GMdzmEwvQBQ=w300	0	663646	12/20/14 13:52	9/28/15 18:48
   attributes: {
   	device_id: {
-  		type: 'number' // from 'Devices' table
+  		type: 'integer', // from 'Devices' table
+      unique: true
   	},
   	package_name: {
   		type: 'string' 
@@ -24,47 +25,51 @@ module.exports = {
   		type: 'string'
   	},
   	app_type: {
-  		type: 'number'
+  		type: 'integer',
   	},
   	category: {
-  		type: 'number'
+  		type: 'integer',
   	},
   	m2_category: {
-  		type: 'number'
+  		type: 'integer',
   	},
   	permissions: {
   		type: 'string'
   	},
   	permission_weight: {
-  		type: 'number'
+  		type: 'integer',
   	},
   	notification_score: {
-  		type: 'number'
+  		type: 'integer',
   	},
   	analytic_providers: {
   		type: 'string'
   	},
   	apk_size: {
-  		type: 'number'
+  		type: 'integer',
   	},
   	ignore_category: {
-  		type: NULL
+  		type: 'NULL'
   	},
   	icon_link: {
   		type: 'string'
   	},
   	not_on_play: {
-  		type: 'number'
+  		type: 'integer',
   	},
   	create_device_id: {
-  		type: 'number'
+  		type: 'integer',
   	},
   	create_date: {
-  		type: 'string'
+  		type: 'datetime'
   	},
   	update_date: {
-  		type: 'string'
-  	}
+  		type: 'datetime'
+  	},
+    toJSON: () => {
+      var applicationVersions = this.toJSON()
+      return applicationVersions
+    }
   }
 };
 

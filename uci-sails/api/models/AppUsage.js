@@ -10,35 +10,40 @@ module.exports = {
 // 33919	7096	4	9/1/15 0:05	2063506	FALSE	2015	9	1	com.motricity.verizon.ssodownloadable  
 attributes: {
   	device_id: {
-  		type: 'number' // from 'Devices' table
+  		type: 'integer', // from 'Devices' table
+      unique: true
   	},
   	application_version_id: {
-  		type: 'number' // from 'Application Versions' table
+  		type: 'integer' // from 'Application Versions' table
   	},
   	type: {
-  		type: 'number'
+  		type: 'integer'
   	},
   	start_date: {
-  		type: 'string'
+  		type: 'datetime'
   	},
   	run_time: {
-  		type: 'number'
+  		type: 'integer'
   	},
   	continuation: {
   		type: 'boolean'
   	},
   	year: {
-  		type: 'number'
+  		type: 'integer'
   	},
   	month: {
-  		type: 'number'
+  		type: 'integer'
   	},
   	day: {
-  		type: 'number'
+  		type: 'integer'
   	},
   	package_name: {
   		type: 'string'
-  	}
+  	},
+    toJSON: () => {
+       var appUsage = this.toJSON()
+       return appUsage
+      }
   }
 };
 

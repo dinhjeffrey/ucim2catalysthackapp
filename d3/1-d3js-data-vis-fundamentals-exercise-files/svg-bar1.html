@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="description" content="Drawing Basic Shapes - Bars" />
+  <meta charset="utf-8">
+  <title>Drawing SVG Shapes with D3</title>
+  <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+</head>
+<body>
+  <!-- Let's draw some shapes! -->
+  
+  <!-- how about a rectangle -->
+  <h3>SVG Bar</h3>
+  <svg>
+    <rect width="50" height="200" style="fill: blue;"/>
+  </svg>
+  
+  
+  <!-- Now let's try that with D3 -->
+  <h3>D3 Bar</h3>
+  <script>
+    d3.select("body") //select the <body> html tag
+      .append("svg") //add a new <svg> html element
+      .append("rect") //add a new <rect> html element which will be our bar
+          .attr("width", 50) //set the width of our bar
+          .attr("height", 200) //set the height of our bar
+          .style("fill", "blue"); //fill the bar w/ the color blue
+  </script>
+  
+  
+</body>
+</html>
