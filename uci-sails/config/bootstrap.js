@@ -12,6 +12,8 @@
 module.exports.bootstrap = function(cb) {
 
   //TODO use sails-factory
+  
+
   //dirty way of instantiating dummy data each start of
   User.create([ {
     email: 'jeff@mail.com',

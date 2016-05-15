@@ -31,11 +31,11 @@
 module.exports = {
 
   attributes: {
+    // we will just use id for this
     device_id: {
       type: 'integer',
-      required: true,
-      unique: true,
-      primaryKey: true
+      // primaryKey: true,
+      unique: true
     },
     parent_device_id: {
       type: 'integer',

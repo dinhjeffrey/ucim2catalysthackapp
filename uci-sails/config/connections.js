@@ -78,7 +78,7 @@ module.exports.connections = {
     adapter: 'sails-postgresql',
     host: 'localhost',
     user: 'uci-user', // optional
-    password: 'YOUR_POSTGRES_PASSWORD', // optional
+    // password: '', // optional
     database: 'uci-postgres' //optional
   },
 
