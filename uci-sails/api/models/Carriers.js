@@ -24,7 +24,7 @@ module.exports = {
       unique: false
     },
     toJSON: function() {
-      var carriers = this.toJson()
+      var carriers = this.toObject()
       return carriers;
     }
   }

@@ -18,7 +18,7 @@ module.exports = {
   show: function(req,res,next) {
     User.find({id: /*req.body.id*/ req.params['id'] }).exec(function (err, userdata){
       if (err) return res.negotiate(err);
-      var idJSON = JSON.stringify(userdata) // convert object to JSON
+      var idJSON = JSON.stringify(userdata); // convert object to JSON
       res.ok(idJSON)
     });
 

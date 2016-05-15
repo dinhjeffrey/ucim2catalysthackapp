@@ -69,7 +69,7 @@ module.exports = {
       unique: false
     },
     toJSON: function() {
-      var mobileinfo = this.toJSON()
+      var mobileinfo = this.toObject()
       return mobileinfo
     }
   }

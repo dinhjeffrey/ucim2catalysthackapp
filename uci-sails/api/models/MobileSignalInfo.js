@@ -61,7 +61,10 @@ module.exports = {
 	},
 	latitude: {
 		type: 'float'
-	}
-  }
-};
+	},
+    toJSON: function() {
+      var mobilesignalinfo = this.toObject()
+      return mobilesignalinfo
+    }
+  }};
 

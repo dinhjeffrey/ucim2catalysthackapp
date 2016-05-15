@@ -193,7 +193,7 @@ module.exports = {
       unique: false
     },
     toJSON: function() {
-      var device = this.toJSON();
+      var device = this.toObject();
       return device;
     }
   }

@@ -14,7 +14,7 @@ module.exports = {
       unique: true
   	},
   	package_name: {
-  		type: 'string' 
+  		type: 'string'
   	},
   	name: {
   		type: 'string'
@@ -68,7 +68,7 @@ module.exports = {
   		type: 'datetime'
   	},
     toJSON: function() {
-      var applicationVersions = this.toJSON()
+      var applicationVersions = this.toObject()
       return applicationVersions
     }
   }
