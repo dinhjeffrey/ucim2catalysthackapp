@@ -61,8 +61,8 @@ module.exports = {
     },
     device_uuid: {
       type: 'string',
-      required: true,
-      unique: true
+      required: false,
+      unique: false
     },
     device_type_id: {
       type: 'integer',
@@ -95,39 +95,42 @@ module.exports = {
       unique: false
     },
     mcc: {
-      type: 'string',
+      type: 'integer',
       required: false,
       unique: false
     },
     mnc: {
-      type: 'string',
+      type: 'integer',
       required: false,
       unique: false
     },
     n_mcc: {
-      type: 'string',
+      type: 'integer',
       required: false,
       unique: false
     },
     n_mnc: {
-      type: 'string',
+      type: 'integer',
       required: false,
       unique: false
     },
     s_mcc: {
-      type: 'string',
+      type: 'integer',
       required: false,
       unique: false
     },
     s_mnc: {
-      type: 'string',
+      type: 'integer',
       required: false,
       unique: false
     },
     r_mcc: {
-      type: 'string',
+      type: 'integer',
       required: false,
       unique: false
+    },
+    r_mnc: {
+      type: 'integer',
     },
     language: {
       type: 'string',
