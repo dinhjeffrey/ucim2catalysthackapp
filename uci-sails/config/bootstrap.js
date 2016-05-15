@@ -31,6 +31,16 @@ module.exports.bootstrap = function(cb) {
       console.log(`stderr: ${data}`);
     });
 
+    var pg = require('pg');
+    var myConnectionString = "postgres://uci-user:uci-user@localhost/uci-postgres";
+    var pgClient = new pg.Client(myConnectionString);
+    pgClient.connect();
+    //db config
+    console.log('granting "uci-user" sudo privileges');
+    var givesu = pgClient.query('GRANT CONNECT ON database "uci-postgres" to "uci-user"; GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public to "uci-user"');
+
+
+
     // ls.on('close', function (code) {
     //   console.log(`child process exited with code ${code}`);
     // });
@@ -47,14 +57,7 @@ module.exports.bootstrap = function(cb) {
     // connection.query(queryString, function(err, records){
     //   // Do something
     // });
-    var pg = require('pg');
-    var myConnectionString = "postgres://uci-user:uci-user@localhost/uci-postgres";
-    var pgClient = new pg.Client(myConnectionString);
-    pgClient.connect();
-    //db config
-    console.log('granting "uci-user" sudo privileges');
-    var givesu = pgClient.query('GRANT CONNECT ON database "uci-postgres" to "uci-user"; GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public to "uci-user"');
-    // var query = pgClient.query("COPY \"device\"(device_id,parent_device_id,company_id,device_uuid,device_type_id,device_type,device_os,carrier_name,mcc,mnc,n_mcc,n_mnc,s_mcc,s_mnc,r_mcc,r_mnc,language,latest_post,device_secret,create_date,cpu_info,cpu_max_speed) FROM '../cleandata/cleaneddevices.csv' DELIMITER ',' CSV HEADER;");
+// var query = pgClient.query("COPY \"device\"(device_id,parent_device_id,company_id,device_uuid,device_type_id,device_type,device_os,carrier_name,mcc,mnc,n_mcc,n_mnc,s_mcc,s_mnc,r_mcc,r_mnc,language,latest_post,device_secret,create_date,cpu_info,cpu_max_speed) FROM '../cleandata/cleaneddevices.csv' DELIMITER ',' CSV HEADER;");
 
 
 
@@ -95,13 +98,14 @@ module.exports.bootstrap = function(cb) {
       function(err, results) {
         // if (err) return res.serverError(err);
         // return res.ok(results.rows);
+
+        console.log('completed COPYING ../cleandata/cleaneddevice.csv to device table');
+
         /*clearing tables*/
         Device.query('DELETE FROM "device";', function(err,results) {
           console.log('DELETE FROM "device";\n');
         });
         /*clearing tables*/
-        console.log('completed COPYING ../cleandata/cleaneddevice.csv to device table');
-
       }
     )
 
@@ -148,6 +152,7 @@ module.exports.bootstrap = function(cb) {
     // } else {
     // }
   });
+
 
 
   cb();
