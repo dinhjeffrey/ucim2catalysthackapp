@@ -1,0 +1,463 @@
+<html>
+    <head>
+    	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    	<link href='style.css' rel='stylesheet' type='text/css'>
+        <script src="d3.v3.js" charset="utf-8"></script>   
+    </head>
+    <body>
+
+    	<h1 id="dashTitle">2013 Sales Dashboard</h1>
+
+    	<div id="topChart" style="float: left; width: 800px;">
+			<h2 style="margin-left:50px; float:left;">Sales by Month (colored by profit)</h1>				
+			<svg id="barChartLegend"></svg>
+	    	<svg id="barChart"></svg>
+	    </div>
+
+	    <div id="bottomLeft" style="float:left; width: 350px; margin-left: 50px;"></div>
+
+	    <div id="bottomRight" style="float:left; width: 400px;">
+	    	<h2>Sales by State</h2>	    	    		
+	    </div>
+    
+	    <!-- global functions -->
+	    <script>	   
+			function formatSales(d){
+    			var prefix = d3.formatPrefix(d);
+    			var num =  prefix.scale(d).toFixed();						    			
+    			return num+prefix.symbol;
+			}
+
+			function compareNums(a,b){
+				return a-b;
+			}
+
+    </script>
+
+
+
+    	<!-- build bar chart -->
+    	<script>
+
+    		function buildBar(ds){
+
+
+				var barTooltip = d3.select("body").append("div")   
+				    .attr("class", "tooltip")               
+				    .style("opacity", 0);
+
+    			
+    			var formatRatio = d3.format("%");
+
+				var margin = {top: 20, right: 30, bottom: 30, left: 40},
+				    width = 800 - margin.left - margin.right,
+				    height = 200 - margin.top - margin.bottom;
+
+				var x = d3.scale.ordinal()
+				    .rangeRoundBands([0, width], .1);
+
+				var y = d3.scale.linear()
+				    .range([height, 0]);
+
+				var xAxis = d3.svg.axis()
+				    .scale(x)
+				    .orient("bottom");
+
+				var yAxis = d3.svg.axis()
+				    .scale(y)
+				    .orient("left")
+				    .tickFormat(d3.format("s"))
+				    .ticks(3);
+
+				//get bar color
+
+				var minProfit = d3.min(ds, function(d){ return d.profit; });
+				var maxProfit = d3.max(ds, function(d){ return d.profit; });
+
+				// console.log(minProfit);
+				// console.log(maxProfit);
+
+				var color = d3.scale.quantize()
+							.domain([minProfit, maxProfit])							
+							.range(['rgb(202,0,32)','rgb(244,165,130)','rgb(186,186,186)','rgb(64,64,64)']);
+							
+
+				var chart = d3.select("#barChart")
+				    .attr("width", width + margin.left + margin.right)
+				    .attr("height", height + margin.top + margin.bottom)
+				  .append("g")
+				    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+				d3.csv("2013-monthly-sales.csv", function(error, data) {
+				  x.domain(data.map(function(d) { return d.month; }));
+				  y.domain([0, d3.max(data, function(d) { return d.sales; })]);
+
+				  chart.append("g")
+				      .attr("class", "x-axis")
+				      .attr("transform", "translate(0," + height + ")")
+				      .call(xAxis);
+
+				  chart.append("g")
+				      .attr("class", "y-axis")
+				      .call(yAxis);
+
+				  chart.selectAll("#barChart")
+					.data(data)
+					.enter().append("rect")
+					.attr("class", "bar")
+					.attr("x", function(d) { return x(d.month); })
+					.attr("y", function(d) { return y(d.sales); })
+					.attr("height", function(d) { return height - y(d.sales); })
+					.attr("width", x.rangeBand())
+					.style("fill", function(d) { return color(d.profit); })
+					.on("mouseover", function(d) {      
+
+                            barTooltip.transition()        
+                                .duration(500)      
+                                .style("opacity", .9);      
+
+                            var tip = "<strong>Sales:</strong> $" + formatSales(d.sales) + "<br/>";
+                            var tip = tip+"<strong>Profit:</strong> $" + formatSales(d.profit)+ "<br/>";
+                            var tip = tip+"<strong>Ratio:</strong> " + formatRatio(d.profit/d.sales)+ "<br/>";
+
+                            barTooltip.html(tip)  
+                                .style("left", (d3.event.pageX) + "px")     
+                                .style("top", (d3.event.pageY - 28) + "px");    
+                        })                  
+                        .on("mouseout", function(d) {       
+
+                            barTooltip.transition()        
+                                .duration(500)      
+                                .style("opacity", 0);   
+                        });
+
+
+				});
+    		}
+
+
+    		function buildLegend(data){
+
+		    			var margin = {top: 20, right: 30, bottom: 30, left: 40},
+						    width = 800 - margin.left - margin.right,
+						    height = 200 - margin.top - margin.bottom;
+
+
+						var minProfit = d3.min(data, function(d){ return d.profit; });
+						var maxProfit = d3.max(data, function(d){ return d.profit; });
+
+						// console.log(minProfit);
+						// console.log(maxProfit);
+
+						var color = d3.scale.quantize()
+									.domain([minProfit, maxProfit])							
+									.range(['rgb(202,0,32)','rgb(244,165,130)','rgb(186,186,186)','rgb(64,64,64)']);
+
+    					//sort values for color legend
+
+                        var barLegendData=[];
+
+                        data.forEach(function(dv){
+
+                        	var val = parseFloat(dv.profit)
+
+                        	if (val) {barLegendData.push(val);}
+
+                        });
+
+                        barLegendData.sort(function(a,b){ return a-b;});
+
+                        // console.log(barLegendData);
+
+                        var header = d3.select("#barChartLegend")
+				    				.attr("width", 200)
+				    				.attr("height", 50)				  					
+				    				.attr("transform", "translate(" + 300 + "," + -180 + ")");
+
+				    	header.append("text").text("Profit")
+				    			.attr({
+				    				x: 0,
+				    				y: h-185,
+				    				class: "profitLabel"				    			
+				    			});
+
+                        //add color legend
+                        header.selectAll(".barChartLegend")                        	
+                        	.data(barLegendData)
+                        	.enter()
+                        	.append("rect")
+                        	.attr({
+								x: function(d, i) {return i * (200/barLegendData.length);},
+							    y: height+margin.top,
+							    width: function(d,i){ return (200/barLegendData.length); },
+							    height: 10,
+							  	fill: function(d) { return color(d);},		                           
+							  	class: "barChartLegend"
+                       		});
+
+
+                        	// console.log([barLegendData[0],barLegendData[barLegendData.length-1]]);
+
+                       	header.selectAll("text.profitLegend")
+                       		.data([barLegendData[0],barLegendData[barLegendData.length-1]])
+                       		.enter()
+                       		.append("text")
+                       		.text(function(d){ return formatSales(d);})
+                       		.attr({
+                       			x: function(d,i){ return (200-(margin.left/2))*i;},
+                       			y: h-155,		         
+                       			"font-size":"12px",
+                       			"font-family":"sans-serif",
+                       			class: "profitLegend"
+
+                       		});
+    		}
+
+    		d3.csv("2013-monthly-sales.csv", function(error, data) {
+	           
+	           //problems?
+	           if(error) {
+	               	console.log(error);
+	           }  else {
+
+	           		//build something
+	           		buildLegend(data);
+	           		buildBar(data);                    
+	           }
+	            
+	            
+	        });  
+    	</script>
+
+        <!-- build sparklines -->
+    	<script>
+			
+	        function buildLine(ds) {
+
+
+	        	var margin = {top: 20, right: 30, bottom: 30, left: 40},
+				    w = 400 - margin.left - margin.right,
+				    h = 100 - margin.top - margin.bottom;
+
+	            
+	            //scales
+	            var xScale = d3.scale.linear()
+	                        .domain([
+	                                    d3.min(ds.monthlySales, function(d){ return d.month;}) ,
+	                                    d3.max(ds.monthlySales, function(d){ return d.month;})
+	                                ])                
+	                        .range([0, w])
+	                        .nice();        
+	         
+
+	            var yScale = d3.scale.linear()
+	                        .domain([0, d3.max(ds.monthlySales, function(d){ return d.sales;})])
+	                        .range([h,0])
+	                        .nice();
+	         
+	            var lineFun = d3.svg.line()
+	                .x(function (d) {return xScale(d.month); } )
+	                .y(function (d) {return yScale(d.sales); })
+	                .interpolate("linear");
+	                
+	                
+	            var svg = d3.select("#bottomLeft").append("svg").attr({ width:w, height:h});
+	            
+	            var viz = svg.append("path")
+	                        .attr({
+	                            d: lineFun(ds.monthlySales),
+	                            "stroke" : "#666666",
+	                            "stroke-width": 2,
+	                            "fill" : "none"
+	                        });
+
+	            
+	        }
+	          
+	        //show header
+	        function showHeader(ds) {
+	            d3.select("#bottomLeft").append("h2")
+	                .text(ds.category + " Sales Trend (2013)");
+	        }
+	        
+	        
+	        //get data and draw things  
+	        d3.json("2013-category-sales.json", function(error, data) {
+	           
+	           if(error) {
+	               console.log(error);               
+	           } 
+	            
+	            data.contents.forEach(function(ds){                               
+	                showHeader(ds);
+	                buildLine(ds);                    
+	            })
+	            
+	        });  
+        </script>
+
+        <!-- build map -->
+        <script>
+
+
+				var margin = {top: 20, right: 30, bottom: 30, left: 40},
+				    w = 400 - margin.left - margin.right,
+				    h = 400 - margin.top - margin.bottom;
+
+		            
+		            var projection = d3.geo.albersUsa()
+                                   .translate([w/2+10, (h/2)-80])
+                                   .scale([h+50]);
+
+		            
+		            var path = d3.geo.path()
+								.projection(projection);
+		                             
+		            var color = d3.scale.linear()				
+							.range(['rgb(229,245,224)','rgb(199,233,192)','rgb(161,217,155)','rgb(116,196,118)','rgb(65,171,93)','rgb(35,139,69)','rgb(0,90,50)']);
+
+		                                
+
+		            //Create SVG element
+		            var svg = d3.select("#bottomRight")
+		                        .append("svg")
+		                        .attr("width", w)
+		                        .attr("height", h);
+
+
+		            //Load in Sales Data
+		            d3.csv("2013-state-sales.csv", function(data) {
+
+		                //Set input domain for color scale
+		                color.domain([0,d3.max(data, function(d) { return d.sales; })]);
+
+		                //Load in GeoJSON data
+		                d3.json("us.json", function(json) {
+
+		                    //Merge the ag. data and GeoJSON
+		                    //Loop through once for each ag. data value
+		                    for (var i = 0; i < data.length; i++) {
+		                
+		                        //Grab state name
+		                        var dataState = data[i].state;
+		                        
+		                        //Grab data value, and convert from string to float
+		                        var dataValue = parseFloat(data[i].sales);
+		                
+		                        //Find the corresponding state inside the GeoJSON
+		                        for (var j = 0; j < json.features.length; j++) {
+
+						            var jsonState = json.features[j].properties.NAME;
+		                
+		                            if (dataState == jsonState) {
+		                        
+		                                json.features[j].properties.value = dataValue;
+		                                break;
+		                                
+		                            }
+		                        }       
+		                    }
+
+		                    //add tooltip
+		                    var mapTooltip = d3.select("body").append("div")   
+							    .attr("class", "tooltip")               
+							    .attr("id", "mapTooltip")
+							    .style("opacity", 0);
+
+
+							 //add legend
+							
+				           
+
+		                    //Build Map
+		                    svg.selectAll("path")
+		                       .data(json.features)
+		                       .enter()
+		                       .append("path")
+		                       .attr("d", path)
+		                       .style("fill", function(d) {
+		                            //Get data value
+		                            var value = d.properties.value;
+		                            
+		                            if (value) {
+		                                //If value exists…
+		                                return color(value);
+		                            } else {
+		                                //If value is undefined…
+		                                return "#fff";
+		                            }
+		                       })
+               					.on("mouseover", function(d) {      
+
+		                            mapTooltip.transition()        
+		                                .duration(500)      
+		                                .style("opacity", .9);      
+
+		                            var tip = "<strong>" + d.properties.NAME + "</strong><br/>"
+		                            var tip = tip + "<strong>Sales:</strong> $" + formatSales(d.properties.value) + "<br/>";
+
+		                            mapTooltip.html(tip)  
+		                                .style("left", (d3.event.pageX) + "px")     
+		                                .style("top", (d3.event.pageY - 28) + "px");    
+		                        })                  
+		                        .on("mouseout", function(d) {       
+
+		                            mapTooltip.transition()        
+		                                .duration(500)      
+		                                .style("opacity", 0);   
+		                        });
+
+
+		                        //sort values for color legend
+
+		                        var legendData=[];
+
+		                        json.features.forEach(function(prop){
+
+		                        	var val = parseFloat(prop.properties.value)
+
+		                        	if (val) {legendData.push(val);}
+
+		                        	
+		                        });
+
+		                        legendData.sort(function(a,b){ return a-b;});
+
+		                        // add color legend
+		                        svg.selectAll("rect")		                        	
+		                        	.data(legendData)
+		                        	.enter()
+		                        	.append("rect")
+		                        	.attr({
+										x: function(d, i) {return i * (w/legendData.length);},
+									    y: h-140,
+									    width: function(d,i){ return (w/legendData.length); },
+									    height: 10,
+									  	fill: function(d) { return color(d);}				                           
+		                       		});
+
+
+		                        	// console.log([legendData[0],legendData[legendData.length-1]]);
+
+		                       	svg.selectAll("text")
+		                       		.data([legendData[0],legendData[legendData.length-1]])
+		                       		.enter()
+		                       		.append("text")
+		                       		.text(function(d){ return formatSales(d);})
+		                       		.attr({
+		                       			x: function(d,i){ return (w-(margin.left/2))*i;},
+		                       			y: h-150,		         
+		                       			"font-size":"12px",
+		                       			"font-family":"sans-serif"              			
+		                       		});
+		            
+		                });
+		            
+		            });
+
+
+        </script>
+
+
+    </body>
+</html>

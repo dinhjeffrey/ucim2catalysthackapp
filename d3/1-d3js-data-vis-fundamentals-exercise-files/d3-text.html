@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="description" content="Drawing Shapes w/ D3 - Text" />
+  <meta charset="utf-8">
+  <title>Drawing SVG Shapes with D3</title>
+  <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+</head>
+<body>
+  <svg width="250" height="50">
+    <text x="0" y="25">Easy-peasy</text>
+  </svg>
+  <script>
+  d3.selectAll("body")
+  .append("svg")
+    .attr("width",250)
+    .attr("height",50)
+  .append("text")
+    .text("Easy-peasy")
+    .attr("y",25)
+    .attr("x",0)    
+  </script>
+</body>
+</html>

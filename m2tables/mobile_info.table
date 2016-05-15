@@ -1,0 +1,12 @@
+entry_date
+timestamp
+device_id
+base_station_id
+base_station_long
+base_station_lat
+cid
+lac
+network_id
+system_id
+phone_type
+network_type
