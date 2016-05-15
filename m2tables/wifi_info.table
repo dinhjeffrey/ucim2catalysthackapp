@@ -1,0 +1,8 @@
+entry_date
+timestamp
+device_id
+ssid
+ip_address
+connection_speed
+connected_wifi_band_frequency
+signal_strength_dbm
