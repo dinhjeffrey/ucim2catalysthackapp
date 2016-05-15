@@ -85,7 +85,7 @@ def row_values(row, headers):
     return result
 
 a_file = open("test1.csv", "w")
-",".join(headers)
+a_file.write(",".join(headers) + "\n")
 
 with open("data_small.csv") as csvReadFile: 
     reader = csv.DictReader(csvReadFile)
