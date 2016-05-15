@@ -69,6 +69,12 @@ module.exports.bootstrap = function(cb) {
       console.log(dev)
     });
 
+    /*clearing tables*/
+    Device.query('DELETE FROM "device";', function(err,results) {
+      console.log('DELETE FROM "device";\n');
+    });
+    /*clearing tables*/
+
     Device.query(
       'COPY "device"('
       +'device_id,'
@@ -101,11 +107,6 @@ module.exports.bootstrap = function(cb) {
 
         console.log('completed COPYING ../cleandata/cleaneddevice.csv to device table');
 
-        /*clearing tables*/
-        Device.query('DELETE FROM "device";', function(err,results) {
-          console.log('DELETE FROM "device";\n');
-        });
-        /*clearing tables*/
       }
     )
 
