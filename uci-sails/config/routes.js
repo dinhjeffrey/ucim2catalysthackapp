@@ -59,7 +59,7 @@ module.exports.routes = {
     controller: 'UserController',
     action: 'create'
   },
-  
+
   /***************************************************************************
   *                                                                          *
   * Custom routes here...                                                    *
@@ -77,5 +77,17 @@ module.exports.routes = {
     controller: 'UserController',
     action: 'show'
   },
-  'POST /user': 'UserController.signup'
+  'POST /user': 'UserController.signup',
+
+  /**
+   * devices bargraph
+   */
+
+  'GET /showDevices/:limit': {
+    controller: 'DeviceController',
+    action: 'deviceModelBar'
+  },
+  '/devmodelbar': {
+    view: 'device/devmodelbar'
+  }
 };

@@ -27,7 +27,8 @@ var jsFilesToInject = [
 
   // Load sails.io before everything else
   'js/dependencies/sails.io.js',
-
+  'js/d3.min.js',
+  'js/jquery-2.2.3.min.js',
   // Dependencies like jQuery, or Angular are brought in here
   'js/dependencies/**/*.js',
 
