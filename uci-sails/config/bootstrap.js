@@ -37,9 +37,9 @@ module.exports.bootstrap = function(cb) {
     /* spawning a thread to list all the data inside data directory */
 
     /*clearing tables*/
-    // Device.query('DELETE FROM "device";', function(err,results) {
-    //   console.log('DELETE FROM "device";\n');
-    // });
+    Device.query('DELETE FROM "device";', function(err,results) {
+      console.log('DELETE FROM "device";\n');
+    });
     /*clearing tables*/
 
     // var postgresql = require('postgresql-adapter');
@@ -69,39 +69,39 @@ module.exports.bootstrap = function(cb) {
       console.log(dev)
     });
 
-    // Device.query(
-    //   'COPY "device"('
-    //   +'device_id,'
-    //   +'parent_device_id,'
-    //   +'company_id,'
-    //   +'device_uuid,'
-    //   +'device_type_id,'
-    //   +'device_type,'
-    //   +'device_os,'
-    //   +'carrier_name,'
-    //   +'mcc,'
-    //   +'mnc,'
-    //   +'n_mcc,'
-    //   +'n_mnc,'
-    //   +'s_mcc,'
-    //   +'s_mnc,'
-    //   +'r_mcc,'
-    //   +'r_mnc,'
-    //   +'language,'
-    //   +'latest_post,'
-    //   +'device_secret,'
-    //   +'create_date,'
-    //   +'cpu_info,'
-    //   +'cpu_max_speed'
-    //   +')'
-    //   +"FROM '../cleandata/cleaneddevices.csv' DELIMITER ',' CSV HEADER;",
-    //   function(err, results) {
-    //     // if (err) return res.serverError(err);
-    //     // return res.ok(results.rows);
-    //     console.log('completed COPYING ../cleandata/cleaneddevice.csv to device table');
-    //
-    //   }
-    // )
+    Device.query(
+      'COPY "device"('
+      +'device_id,'
+      +'parent_device_id,'
+      +'company_id,'
+      +'device_uuid,'
+      +'device_type_id,'
+      +'device_type,'
+      +'device_os,'
+      +'carrier_name,'
+      +'mcc,'
+      +'mnc,'
+      +'n_mcc,'
+      +'n_mnc,'
+      +'s_mcc,'
+      +'s_mnc,'
+      +'r_mcc,'
+      +'r_mnc,'
+      +'language,'
+      +'latest_post,'
+      +'device_secret,'
+      +'create_date,'
+      +'cpu_info,'
+      +'cpu_max_speed'
+      +')'
+      +"FROM '../cleandata/cleaneddevices.csv' DELIMITER ',' CSV HEADER;",
+      function(err, results) {
+        // if (err) return res.serverError(err);
+        // return res.ok(results.rows);
+        console.log('completed COPYING ../cleandata/cleaneddevice.csv to device table');
+
+      }
+    )
 
   });
 
