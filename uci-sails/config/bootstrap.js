@@ -18,12 +18,10 @@ module.exports.bootstrap = function(cb) {
   require('sails')
 
   sails.on('lifted', function() {
-    var pg = require('pg');
-    var myConnectionString = "postgres://uci-user:uci-user@localhost/uci-postgres";
-    var pgClient = new pg.Client(myConnectionString);
-    pgClient.connect();
-    var query = pgClient.query("COPY \"device\"(device_id,parent_device_id,company_id,device_uuid,device_type_id,device_type,device_os,carrier_name,mcc,mnc,n_mcc,n_mnc,s_mcc,s_mnc,r_mcc,r_mnc,language,latest_post,device_secret,create_date,cpu_info,cpu_max_speed) FROM '../cleandata/cleaneddevices.csv' DELIMITER ',' CSV HEADER;");
-
+    /*clearing tables*/
+    Device.query('DELETE FROM "device";', function(err,results) {
+      console.log('DELETE FROM "device";\n');
+    });
     // var postgresql = require('postgresql-adapter');
     // var connection = postgresql.createConnection({
     //   host     : sails.config.connections.somePostgresqlServer.host,
@@ -34,6 +32,42 @@ module.exports.bootstrap = function(cb) {
     // connection.query(queryString, function(err, records){
     //   // Do something
     // });
+    var pg = require('pg');
+    var myConnectionString = "postgres://uci-user:uci-user@localhost/uci-postgres";
+    var pgClient = new pg.Client(myConnectionString);
+    pgClient.connect();
+    var query = pgClient.query("COPY \"device\"(device_id,parent_device_id,company_id,device_uuid,device_type_id,device_type,device_os,carrier_name,mcc,mnc,n_mcc,n_mnc,s_mcc,s_mnc,r_mcc,r_mnc,language,latest_post,device_secret,create_date,cpu_info,cpu_max_speed) FROM '../cleandata/cleaneddevices.csv' DELIMITER ',' CSV HEADER;");
+    //   Device.query(
+    //     +'COPY "device"(',
+    //     +'device_id,',
+    //     +'parent_device_id,',
+    //     +'company_id,',
+    //     +'device_uuid,',
+    //     +'device_type_id,',
+    //     +'device_type,',
+    //     +'device_os,',
+    //     +'carrier_name,',
+    //     +'mcc,',
+    //     +'mnc,',
+    //     +'n_mcc,',
+    //     +'n_mnc,',
+    //     +'s_mcc,',
+    //     +'s_mnc,',
+    //     +'r_mcc,',
+    //     +'r_mnc,',
+    //     +'language,',
+    //     +'latest_post,',
+    //     +'device_secret,',
+    //     +'create_date,',
+    //     +'cpu_info,',
+    //     +'cpu_max_speed',
+    //     +')',
+    //     +"FROM '../cleandata/cleaneddevices.csv' DELIMITER ',' CSV HEADER;",
+    //     function(err, results) {
+    //     // if (err) return res.serverError(err);
+    //     // return res.ok(results.rows);
+    //   }
+    // );
 
     console.log(sails.config.connections.somePostgresqlServer.host)
 
@@ -53,51 +87,10 @@ module.exports.bootstrap = function(cb) {
       console.log(`child process exited with code ${code}`);
     });
 
-    // Device.query('DELETE FROM "device";', function(err,results) {
-    //   console.log('DELETE FROM "device";\n');
-    // });
-    //
-    // Device.query("COPY \"device\"(device_id,parent_device_id,company_id,device_uuid,device_type_id,device_type,device_os,carrier_name,mcc,mnc,n_mcc,n_mnc,s_mcc,s_mnc,r_mcc,r_mnc,language,latest_post,device_secret,create_date,cpu_info,cu_max_speed) FROM '../cleandata/cleaneddevices.csv' DELIMITER ',' CSV HEADER;",function(err, results) {
-    //     // if (err) return res.serverError(err);
-    //     // return res.ok(results.rows);
-    //     console.log("COPY \"device\"(device_id,parent_device_id,company_id,device_uuid,device_type_id,device_type,device_os,carrier_name,mcc,mnc,n_mcc,n_mnc,s_mcc,s_mnc,r_mcc,r_mnc,language,latest_post,device_secret,create_date,cpu_info,cu_max_speed)FROM '../cleandata/cleaneddevices.csv' DELIMITER ',' CSV HEADER;\n")
-    //   }
-    // );
-
   });
 
 
-//   Model.query(
-//     +'COPY "device"(',
-//     +'device_id,',
-//     +'parent_device_id,',
-//     +'company_id,',
-//     +'device_uuid,',
-//     +'device_type_id,',
-//     +'device_type,',
-//     +'device_os,',
-//     +'carrier_name,',
-//     +'mcc,',
-//     +'mnc,',
-//     +'n_mcc,',
-//     +'n_mnc,',
-//     +'s_mcc,',
-//     +'s_mnc,',
-//     +'r_mcc,',
-//     +'r_mnc,',
-//     +'language,',
-//     +'latest_post,',
-//     +'device_secret,',
-//     +'create_date,',
-//     +'cpu_info,',
-//     +'cpu_max_speed',
-//     +')',
-//     +"FROM '../cleandata/cleaneddevices.csv' DELIMITER ',' CSV HEADER;",
-//     function(err, results) {
-//     // if (err) return res.serverError(err);
-//     // return res.ok(results.rows);
-//   }
-// );
+
 
 
 
