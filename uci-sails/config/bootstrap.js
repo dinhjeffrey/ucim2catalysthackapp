@@ -36,11 +36,6 @@ module.exports.bootstrap = function(cb) {
     // });
     /* spawning a thread to list all the data inside data directory */
 
-    /*clearing tables*/
-    Device.query('DELETE FROM "device";', function(err,results) {
-      console.log('DELETE FROM "device";\n');
-    });
-    /*clearing tables*/
 
     // var postgresql = require('postgresql-adapter');
     // var connection = postgresql.createConnection({
@@ -61,11 +56,13 @@ module.exports.bootstrap = function(cb) {
     var givesu = pgClient.query('GRANT CONNECT ON database "uci-postgres" to "uci-user"; GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public to "uci-user"');
     // var query = pgClient.query("COPY \"device\"(device_id,parent_device_id,company_id,device_uuid,device_type_id,device_type,device_os,carrier_name,mcc,mnc,n_mcc,n_mnc,s_mcc,s_mnc,r_mcc,r_mnc,language,latest_post,device_secret,create_date,cpu_info,cpu_max_speed) FROM '../cleandata/cleaneddevices.csv' DELIMITER ',' CSV HEADER;");
 
+
+
     var oneDevice = Device.find({where: { id: '*'},limit: 1})
     console.log(oneDevice);
 
     Device.find({limit:1}).exec((err,rec) => {
-      var dev = rec.pop().toObject();
+      var dev = rec.pop();
       console.log(dev)
     });
 
@@ -98,10 +95,18 @@ module.exports.bootstrap = function(cb) {
       function(err, results) {
         // if (err) return res.serverError(err);
         // return res.ok(results.rows);
+        /*clearing tables*/
+        Device.query('DELETE FROM "device";', function(err,results) {
+          console.log('DELETE FROM "device";\n');
+        });
+        /*clearing tables*/
         console.log('completed COPYING ../cleandata/cleaneddevice.csv to device table');
 
       }
     )
+
+
+
 
   });
 
