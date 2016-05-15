@@ -77,11 +77,5 @@ module.exports.routes = {
     controller: 'UserController',
     action: 'show'
   },
-  'POST /query': { // do ajax, not this
-    controller: 'QueryController',
-    action: 'show'
-  },
   'POST /user': 'UserController.signup'
-
-
 };
